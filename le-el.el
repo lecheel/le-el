@@ -1,11 +1,13 @@
 ; ~/.emacs.d/le-el.el
 (load "~/.emacs.d/lestyle.el")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/el"))
+
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
 ; (when <condition> <code-to-execute-1> <code-to-execute2> ...)
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;;(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 
@@ -32,6 +34,7 @@
 (global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
 
+(global-set-key [(f8)] 'taglist)
 (global-set-key [(f9)] 'git-gutter-mode)
 (global-set-key [(f6)] 'other-window)
 ;
@@ -40,6 +43,20 @@
 
 
 (global-set-key "\C-h" 'delete-backward-char)
+(setq speedbar-tag-hierarchy-method nil)
+
+;;;
+;;; vgrep
+;;;
+
+(require 'vgrep-mode)
+(global-set-key "\M-'" 'vgrep)
+(global-set-key [(f11)]'vlist)
+(add-hook 'grp-mode-hook '(lambda ()
+			    (local-set-key (kbd "RET") 'vEnter)))
+
+;;; taglist
+(require 'taglist)
 
 ;;
 ;;; git-gutter
