@@ -62,6 +62,21 @@
 (evil-leader/set-key "sg" 'cscope-find-global-definition)
 (evil-leader/set-key "su" 'cscope-pop-mark)
 
+
+(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+;; Vim key bindings
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+  "\\" 'evilnc-comment-operator ; if you prefer backslash key
+  )
+
 ;;(define-key global-map (kbd "C-\ s") 'cscope-find-this-symbol)
 ;;(define-key global-map (kbd "C-\ e") 'cscope-find-egrep-pattern)
 
