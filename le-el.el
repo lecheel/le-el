@@ -20,27 +20,26 @@
 ;;
 ;; leStyle key binding
 ;; 
-(global-set-key "\M-=" 'le-next-buffer)
-(global-set-key "\M--" 'le-previous-buffer) 
-(global-set-key "\M-q" 'leQuit)
+
 (global-set-key "\C-q" 'leQuit)
-(global-set-key "\M-d" 'kill-whole-line)
-(global-set-key "\M-y" 'er/mark-word)
-(global-set-key "\M-c" 'er/mark-word)
-(global-set-key "\M-g" 'goto-line)
+(global-set-key "\M--" 'le-previous-buffer) 
+(global-set-key "\M-=" 'le-next-buffer)
 (global-set-key "\M-b" 'ibuffer)
+(global-set-key "\M-c" 'er/mark-word)
+(global-set-key "\M-c" 'set-rectangular-region-anchor)
+(global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
+(global-set-key "\M-g" 'goto-line)
+(global-set-key "\M-q" 'leQuit)
 (global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
-
+(global-set-key "\M-y" 'er/mark-word)
+(global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f9)] 'git-gutter-mode)
-(global-set-key [(f6)] 'other-window)
-;
-;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
-(setq make-backup-files nil)
 
+;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 (global-set-key "\C-h" 'delete-backward-char)
 (setq speedbar-tag-hierarchy-method nil)
