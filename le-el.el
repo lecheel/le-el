@@ -23,10 +23,15 @@
 (require 'helm)
 (bind-key "C-h" nil helm-map)
 
+
+;; paredit
+(require 'paredit)
+
 ;;
 ;; leStyle key binding
 ;; 
 
+(global-set-key "\C-k" 'paredit-kill)
 (global-set-key "\C-q" 'leQuit)
 (global-set-key "\M--" 'le-previous-buffer) 
 (global-set-key "\M-=" 'le-next-buffer)

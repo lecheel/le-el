@@ -32,6 +32,7 @@
 	evil
 	evil-leader
 	evil-matchit
+	evil-paredit
 	evil-nerd-commenter
 	evil-search-highlight-persist
 	evil-visualstar
@@ -42,6 +43,7 @@
 	linum-relative
 	magit
 	multiple-cursors
+	paredit
 	powerline
 	powerline-evil
 	wgrep
