@@ -40,9 +40,10 @@
 (setq evil-leader/in-all-states 1)
 (setq ace-jump-mode-gray-background nil)
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(evil-leader/set-key "l"  'evil-ace-jump-line-mode)
 
 ;; evil leader
-(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+;;(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
 
 ;; iedit for block operation like multiple-cursors
 (require 'iedit)

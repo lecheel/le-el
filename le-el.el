@@ -23,7 +23,7 @@
 (global-set-key "\M-q" 'leQuit)
 (global-set-key "\C-q" 'leQuit)
 (global-set-key "\M-d" 'kill-whole-line)
-;;(global-set-key "\M-y" 'le-markword)
+(global-set-key "\M-y" 'er/mark-word)
 (global-set-key "\M-c" 'er/mark-word)
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-b" 'ibuffer)
@@ -71,4 +71,10 @@
    (format "ctags -f %s -e -R %s" path-to-ctags (directory-file-name dir-name)))
     )
 
-
+;;;
+;;; more tips from people switch from vim with evil
+;;;
+;;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/   
+;;; http://www.elmindreda.org/emacs.html
+;;;
+;;;

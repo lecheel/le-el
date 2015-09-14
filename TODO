@@ -21,6 +21,8 @@
 
    * add magit, ace-jump, xcscope, evil ...
    * add powerline and airline-themes also linum-relative
-   
+   * (remove evil-ret for better compatible with other package)
+   * comment evil-maps.el (define-key evil-motion-state-map (kbd "RET") 'evil-ret)  
+
    
    
