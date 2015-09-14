@@ -7,7 +7,7 @@
 ; when is a special form of "if", with no else clause, it reads:
 ; (when <condition> <code-to-execute-1> <code-to-execute2> ...)
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-;;(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 
@@ -16,6 +16,12 @@
 (setq-default save-place t)
 (require 'saveplace)
 
+
+
+(require 'bind-key)
+(bind-key* "C-h" 'backward-delete-char)
+(require 'helm)
+(bind-key "C-h" nil helm-map)
 
 ;;
 ;; leStyle key binding
@@ -28,9 +34,8 @@
 (global-set-key "\M-c" 'er/mark-word)
 (global-set-key "\M-c" 'set-rectangular-region-anchor)
 (global-set-key "\M-d" 'kill-whole-line)
-(global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
-(global-set-key "\M-g" 'goto-line)
+;;(global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-q" 'leQuit)
 (global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
@@ -38,6 +43,9 @@
 (global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f9)] 'git-gutter-mode)
+
+;;; super M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 ;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 

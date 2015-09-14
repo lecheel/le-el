@@ -27,11 +27,13 @@
 	ack-menu
 	airline-themes
 	ag
+	bind-key
 	etags-select
 	evil
 	evil-leader
 	evil-matchit
 	evil-nerd-commenter
+	evil-search-highlight-persist
 	evil-visualstar
 	expand-region
 	git-gutter
