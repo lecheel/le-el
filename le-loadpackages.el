@@ -14,12 +14,21 @@
 (require 'magit)
 (define-key global-map (kbd "C-c m") 'magit-status)
 
+
+;; linum-mode 
+(require 'linum-relative)
+(global-linum-mode 1)
+
 ;;(require 'yasnippet)
 ;;(yas-global-mode 1)
 ;;(yas-load-directory "~/.emacs.d/snippets")
 ;;(add-hook 'term-mode-hook (lambda()
 ;;    (setq yas-dont-activate t)))
 
+(require 'multiple-cursors)
+(require 'powerline)
+(powerline-default-theme)
+(load-theme 'airline-papercolor t)
 
 ;; evil-leader
 (require 'evil-leader)
@@ -30,8 +39,6 @@
 ;;(setq ace-jump-mode-gray-background nil)
 ;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
-
-
 ;; cscope
 (require 'xcscope)
 (evil-leader/set-key "ss" 'cscope-find-this-symbol)
@@ -41,4 +48,6 @@
 (evil-leader/set-key "sg" 'cscope-find-global-definition)
 (evil-leader/set-key "su" 'cscope-pop-mark)
 
+;;(define-key global-map (kbd "C-\ s") 'cscope-find-this-symbol)
+;;(define-key global-map (kbd "C-\ e") 'cscope-find-egrep-pattern)
 

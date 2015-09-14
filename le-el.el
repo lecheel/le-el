@@ -18,6 +18,8 @@
 ;; leStyle key binding
 ;; 
 
+(global-set-key "\M-=" 'le-next-buffer)
+(global-set-key "\M--" 'le-previous-buffer) 
 (global-set-key "\M-q" 'leQuit)
 (global-set-key "\C-q" 'leQuit)
 (global-set-key "\M-d" 'kill-whole-line)
@@ -30,6 +32,8 @@
 (global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
 
+(global-set-key [(f9)] 'git-gutter-mode)
+(global-set-key [(f6)] 'other-window)
 ;
 ;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq make-backup-files nil)
@@ -69,7 +73,7 @@
   (setq i (1+ i)) (next-buffer) )
   ))
 
-(defun le-prev-buffer()
+(defun le-previous-buffer()
   (interactive)
     (previous-buffer)
       (let ((i 0))

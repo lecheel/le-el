@@ -19,17 +19,27 @@
 
 (setq package-list
       '(
+	ace-jump-mode
+	ace-jump-buffer
+	ace-window
+	ace-popup-menu
 	ack
+	ack-menu
+	airline-themes
 	ag
 	etags-select
 	evil
 	evil-leader
+	evil-visualstar
 	git-gutter
 	helm
-	linum
+	linum-relative
 	magit
+	multiple-cursors
 	powerline
+	powerline-evil
 	wgrep
+	wgrep-ack
 	saveplace
 	xcscope
 	yasnippet
