@@ -35,9 +35,16 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 (evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
-;;(setq evil-leader/in-all-states 1)
-;;(setq ace-jump-mode-gray-background nil)
-;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(setq evil-leader/in-all-states 1)
+(setq ace-jump-mode-gray-background nil)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+
+;; evil leader
+(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+
+;; the silver searcher ag
+(require 'ag)
+(setq ag-highlight-search t)
 
 ;; cscope
 (require 'xcscope)
@@ -50,4 +57,5 @@
 
 ;;(define-key global-map (kbd "C-\ s") 'cscope-find-this-symbol)
 ;;(define-key global-map (kbd "C-\ e") 'cscope-find-egrep-pattern)
+
 
