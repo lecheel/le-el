@@ -30,9 +30,13 @@
 	etags-select
 	evil
 	evil-leader
+	evil-matchit
+	evil-nerd-commenter
 	evil-visualstar
+	expand-region
 	git-gutter
 	helm
+	iedit
 	linum-relative
 	magit
 	multiple-cursors

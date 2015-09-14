@@ -38,8 +38,8 @@
 ;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq make-backup-files nil)
 
-(global-set-key "\C-h" 'delete-backward-char)
 
+(global-set-key "\C-h" 'delete-backward-char)
 
 ;;
 ;;; git-gutter

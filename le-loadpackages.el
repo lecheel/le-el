@@ -11,8 +11,10 @@
 (require 'evil)
 (evil-mode t)
 
+
+(require 'expand-region)
 (require 'magit)
-(define-key global-map (kbd "C-c m") 'magit-status)
+(define-key global-map (kbd "C-c g") 'magit-status)
 
 
 ;; linum-mode 
@@ -41,6 +43,11 @@
 
 ;; evil leader
 (evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+
+;; iedit for block operation like multiple-cursors
+(require 'iedit)
+(global-set-key (kbd "C-c =") 'iedit-mode)
+(evil-leader/set-key "=" 'iedit-mode)
 
 ;; the silver searcher ag
 (require 'ag)
