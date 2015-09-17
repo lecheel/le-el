@@ -57,10 +57,6 @@
   (set-face-attribute
    'diff-refine-added nil :foreground "black")
   (set-face-attribute
-   'diff-refine-changed nil :foreground "black")
-  (set-face-attribute
-   'diff-refine-changed nil :foreground "black")
-  (set-face-attribute
    'diff-refine-removed nil :foreground "black")
   (set-face-attribute
    'diff-nonexistent nil :foreground "black")
