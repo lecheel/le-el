@@ -20,7 +20,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(font-lock-comment-face ((t (:foreground "color-22"))))
+ '(font-lock-string-face ((t (:foreground "color-166")))))
 
 
 ;;;
@@ -41,6 +42,48 @@
 (define-key evil-normal-state-map ";" 	 'previous-error)
 (define-key evil-normal-state-map "'" 	 'next-error)
 
+
+;; Customizing colors used in diff mode
+(defun custom-diff-colors ()
+  "update the colors for diff faces"
+  (set-face-attribute
+   'diff-added nil :foreground "green")
+  (set-face-attribute
+   'diff-removed nil :foreground "red")
+  (set-face-attribute
+   'diff-changed nil :foreground "purple")
+  (set-face-attribute
+   'diff-function nil :foreground "black")
+  (set-face-attribute
+   'diff-refine-added nil :foreground "black")
+  (set-face-attribute
+   'diff-refine-changed nil :foreground "black")
+  (set-face-attribute
+   'diff-refine-changed nil :foreground "black")
+  (set-face-attribute
+   'diff-refine-removed nil :foreground "black")
+  (set-face-attribute
+   'diff-nonexistent nil :foreground "black")
+  (set-face-attribute
+   'diff-header nil :foreground "black")
+  (set-face-attribute
+   'diff-hunk-header nil :foreground "black")
+  (set-face-attribute
+   'magit-section-highlight nil :foreground "black")
+  (set-face-attribute
+   'airline-visual-inner nil :foreground "black")
+  (set-face-attribute
+   'cscope-file-face nil :foreground "green")
+  (set-face-attribute
+   'dired-directory nil :foreground "green")
+  (set-face-attribute
+   'font-lock-function-name-face nil :foreground "yellow")
+  (set-face-attribute
+   'font-lock-doc-face nil :foreground "green")
+)
+(eval-after-load "diff-mode" '(custom-diff-colors))
+(global-set-key "\C-h" 'delete-backward-char)
+(define-key isearch-mode-map [(control h)] 'isearch-delete-char)
 
 (defun evil-undefine ()
    (interactive)

@@ -48,6 +48,7 @@
 	powerline-evil
 	wgrep
 	wgrep-ack
+	wgrep-ag
 	saveplace
 	xcscope
 	yasnippet

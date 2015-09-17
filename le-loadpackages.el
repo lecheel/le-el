@@ -41,6 +41,7 @@
 (setq ace-jump-mode-gray-background nil)
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 (evil-leader/set-key "l"  'evil-ace-jump-line-mode)
+(evil-leader/set-key "v"  'exchange-point-and-mark)
 
 ;; evil leader
 ;;(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)

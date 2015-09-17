@@ -10,7 +10,6 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
 ;; Remember the cursor position of files when reopening them
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
@@ -23,6 +22,11 @@
 (require 'helm)
 (bind-key "C-h" nil helm-map)
 
+
+;; Disable prompt asking you if you want to kill a
+;; buffer with a live process attached to it.
+;; http://stackoverflow.com/questions/268088/how-to-remove-the-prompt-for-killing-emacsclient-buffers
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
 ;; paredit
 (require 'paredit)
@@ -54,8 +58,13 @@
 
 ;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
-(global-set-key "\C-h" 'delete-backward-char)
 (setq speedbar-tag-hierarchy-method nil)
+
+;;;
+;;; wgrep-ack
+;;;
+(require 'wgrep-ack)
+(require 'wgrep-ag)
 
 ;;;
 ;;; vgrep
@@ -77,6 +86,22 @@
 (global-git-gutter-mode t)
 (setq git-gutter:separator-sign "|")
 (set-face-foreground 'git-gutter:separator "yellow")
+;; Jump to next/previous hunk
+(global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+;; Stage current hunk
+(global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+;; Revert current hunk
+(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
+
+;;;
+;;; for vim-ex <C-R><C-W>
+;;;
+;;; From https://github.com/tarao/evil-plugins
+(require 'evil-ex-registers)
+(define-key evil-ex-completion-map (kbd "C-r") #'evil-ex-paste-from-register)
+
 
 ;;;
 ;;; emacs daemon and emacs client clean up
@@ -100,6 +125,37 @@
    (format "ctags -f %s -e -R %s" path-to-ctags (directory-file-name dir-name)))
     )
 
+;;
+;; Vim's "set paste"
+;; From  http://stackoverflow.com/questions/18691973/is-there-a-set-paste-option-in-emacs-to-paste-paste-from-external-clipboard
+;;
+(defvar ttypaste-mode nil)
+(add-to-list 'minor-mode-alist '(ttypaste-mode " Paste"))
+
+(defun ttypaste-mode ()
+  (interactive)
+  (let ((buf (current-buffer))
+        (ttypaste-mode t))
+    (with-temp-buffer
+      (let ((stay t)
+            (text (current-buffer)))
+        (redisplay)
+        (while stay
+          (let ((char (let ((inhibit-redisplay t)) (read-event nil t 0.1))))
+            (unless char
+              (with-current-buffer buf (insert-buffer-substring text))
+              (erase-buffer)
+              (redisplay)
+              (setq char (read-event nil t)))
+            (cond
+             ((not (characterp char)) (setq stay nil))
+             ((eq char ?\r) (insert ?\n))
+             ((eq char ?\e)
+              (if (sit-for 0.1 'nodisp) (setq stay nil) (insert ?\e)))
+             (t (insert char)))))
+        (insert-buffer-substring text)))))
+
+
 ;;;
 ;;; more tips from people switch from vim with evil
 ;;;
@@ -107,3 +163,4 @@
 ;;; http://www.elmindreda.org/emacs.html
 ;;;
 ;;;
+
