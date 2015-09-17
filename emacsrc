@@ -36,8 +36,8 @@
 (define-key evil-visual-state-map "\C-w" 'evil-delete)
 
 ;;(define-key evil-normal-state-map "\C-k" 'kill-line)
-;;(define-key evil-insert-state-map "\C-k" 'kill-line)
-;;(define-key evil-visual-state-map "\C-k" 'kill-line)
+(define-key evil-insert-state-map "\C-k" 'paredit-kill)
+(define-key evil-visual-state-map "\C-k" 'paredit-kill)
 
 (define-key evil-normal-state-map ";" 	 'previous-error)
 (define-key evil-normal-state-map "'" 	 'next-error)

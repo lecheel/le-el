@@ -82,4 +82,52 @@
     (save-buffer))
 )
 
+;;
+;; From https://github.com/xahlee/xah-fly-keys
+;;
+(defun xah-extend-selection (arg &optional incremental)
+    "Select the current word.
+Subsequent calls expands the selection to larger semantic unit.
+This command works mostly in lisp syntax.
+Written by Nikolaj Schumacher, 2008-10-20. Released under GPL 2"
+    (interactive
+     (list (prefix-numeric-value current-prefix-arg)
+	   (or (use-region-p)
+	       (eq last-command this-command))))
+    (if incremental
+	(progn
+	  (xah-semnav-up (- arg))
+	  (forward-sexp)
+	  (mark-sexp -1))
+      (if (> arg 1)
+	  (xah-extend-selection (1- arg) t)
+	(if (looking-at "\\=\\(\\s_\\|\\sw\\)*\\_>")
+	    (goto-char (match-end 0))
+	  (unless (memq (char-before) '(?\) ?\"))
+	    (forward-sexp)))
+	(mark-sexp -1))))
+
+(defun xah-select-text-in-quote ()
+    "Select text between the nearest left and right delimiters.
+Delimiters here includes the following chars: \"<>(){}[]“”‘’‹›«»「」『』【】〖〗《》〈〉〔〕（）
+This command does not properly deal with nested brackets.
+URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
+Version 2015-05-16"
+    (interactive)
+    (let (
+	  (ξskipChars
+	   (if (boundp 'xah-brackets)
+	       (concat "^\"" xah-brackets)
+	     "^\"<>(){}[]“”‘’‹›«»「」『』【】〖〗《》〈〉〔〕（）"))
+	  ξp1
+	  ξp2
+	  )
+      (skip-chars-backward ξskipChars)
+      (setq ξp1 (point))
+      (skip-chars-forward ξskipChars)
+      (setq ξp2 (point))
+      (set-mark ξp1)))
+
+
+
 (provide 'lestyle)

@@ -46,12 +46,15 @@
 (global-set-key "\M-e" 'find-file)
 ;;(global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-q" 'leQuit)
-(global-set-key "\M-s" 'isearch-forward)
+;;(global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
 (global-set-key "\M-y" 'er/mark-word)
 (global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f9)] 'git-gutter-mode)
+
+
+(evil-leader/set-key "y"  'xah-extend-selection)
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
