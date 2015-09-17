@@ -24,6 +24,11 @@
    * (remove evil-ret for better compatible with other package)
    * comment evil-maps.el (define-key evil-motion-state-map (kbd "RET") 'evil-ret)  
    * added vgrep and taglist
+   
+   * added ViM quickfix via compliation-mode [; ']
+   * added paredit-mode for easy kill word   ["C-k"]
+   * added evil-ex <C-R><C-W> insert the word under the cursor
+   * added ViM "set paste" without automatic indentation
 
    
    
