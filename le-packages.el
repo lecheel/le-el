@@ -38,6 +38,7 @@
 	evil-visualstar
 	expand-region
 	git-gutter
+	google-translate
 	helm
 	iedit
 	linum-relative

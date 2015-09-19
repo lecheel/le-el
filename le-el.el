@@ -15,6 +15,13 @@
 (setq-default save-place t)
 (require 'saveplace)
 
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(setq google-translate-default-source-language "en")
+(setq google-translate-default-target-language "zh-TW")
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key (kbd "<f2>")    'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
 
 
 (require 'bind-key)

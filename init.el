@@ -15,6 +15,8 @@
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
+ '(history-delete-duplicates t)
  '(linum-format "  %d  ")
  '(puppet-indent-level tab-width)
  '(recentf-max-saved-items 75)
@@ -23,8 +25,8 @@
  '(show-paren-delay 0)
  '(show-paren-mode t)
  '(tab-width 4)
- '(transient-mark-mode t))
+'(transient-mark-mode t))
  
 
-(fset 'yes-or-no-p      'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
