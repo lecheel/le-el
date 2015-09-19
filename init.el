@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(backup-inhibited t)
- '(make-back-files nil)
+ '(make-backup-files nil)
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(column-number-mode t)
  '(echo-keystrokes 0.01)
@@ -26,6 +26,5 @@
  '(transient-mark-mode t))
  
 
-
-(defalias 'yes-or-no-p 'y-or-n-p)
+(fset 'yes-or-no-p      'y-or-n-p)
 
