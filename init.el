@@ -6,6 +6,7 @@
  '(auto-save-default nil)
  '(backup-inhibited t)
  '(make-backup-files nil)
+ '(auto-save-default nil)
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(column-number-mode t)
  '(echo-keystrokes 0.01)
@@ -27,6 +28,6 @@
  '(tab-width 4)
 '(transient-mark-mode t))
  
-
 (defalias 'yes-or-no-p 'y-or-n-p)
+;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 

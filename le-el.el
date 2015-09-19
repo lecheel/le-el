@@ -22,7 +22,7 @@
 (global-set-key "\C-ct" 'google-translate-at-point)
 (global-set-key (kbd "<f2>")    'google-translate-at-point)
 (global-set-key "\C-cT" 'google-translate-query-translate)
-
+(set-face-attribute 'google-translate-translation-face nil :height 1.4)
 
 (require 'bind-key)
 (bind-key* "C-h" 'backward-delete-char)
@@ -62,8 +62,6 @@
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
-
-;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 (setq speedbar-tag-hierarchy-method nil)
 
