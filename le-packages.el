@@ -43,6 +43,8 @@
 	iedit
 	linum-relative
 	magit
+	markdown-mode
+	markdown-mode+
 	multiple-cursors
 	paredit
 	powerline
