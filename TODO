@@ -25,5 +25,8 @@
    * comment evil-maps.el (define-key evil-motion-state-map (kbd "RET") 'evil-ret)  
    * added vgrep and taglist
 
+   * add google-translate C-c t word under cursor
+   * Added Markdown-mode
+   * Added grep-settings for under cursor
    
    
