@@ -38,6 +38,8 @@
 ;; paredit
 (require 'paredit)
 
+(require 'grep-settings)
+
 ;;
 ;; leStyle key binding
 ;; 
@@ -58,6 +60,7 @@
 (global-set-key "\M-y" 'er/mark-word)
 (global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
+(global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
 
 ;;; super M-x
