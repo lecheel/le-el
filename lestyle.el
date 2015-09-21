@@ -129,5 +129,20 @@ Version 2015-05-16"
       (set-mark ξp1)))
 
 
+(defun le-select-word ()
+  "Select a word under cursor."
+  (interactive)
+  (grep-find 
+  (save-excursion
+    (let (b1 b2)
+      (skip-chars-backward "-_A-Za-z0-9")
+      (setq b1 (point))
+      (skip-chars-forward "-_A-Za-z0-9")
+      (setq b2 (point))
+      (set-mark b1)
+      (kill-ring-save b1 b2)
+      )))
+  )
+
 
 (provide 'lestyle)

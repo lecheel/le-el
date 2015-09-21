@@ -23,6 +23,7 @@
  '(font-lock-comment-face ((t (:foreground "color-22"))))
  '(font-lock-string-face ((t (:foreground "color-166")))))
 
+(setq visible-bell t)
 
 ;;;
 ;;; override key bindind is here

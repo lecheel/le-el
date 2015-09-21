@@ -15,7 +15,14 @@
 (setq-default save-place t)
 (require 'saveplace)
 
-
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(setq google-translate-default-source-language "en")
+(setq google-translate-default-target-language "zh-TW")
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key (kbd "<f2>")    'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
+(set-face-attribute 'google-translate-translation-face nil :height 1.4)
 
 (require 'bind-key)
 (bind-key* "C-h" 'backward-delete-char)
@@ -30,6 +37,8 @@
 
 ;; paredit
 (require 'paredit)
+
+(require 'grep-settings)
 
 ;;
 ;; leStyle key binding
@@ -51,6 +60,7 @@
 (global-set-key "\M-y" 'er/mark-word)
 (global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
+(global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
 
 
@@ -58,8 +68,6 @@
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
-
-;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 (setq speedbar-tag-hierarchy-method nil)
 

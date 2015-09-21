@@ -30,5 +30,8 @@
    * added evil-ex <C-R><C-W> insert the word under the cursor
    * added ViM "set paste" without automatic indentation
 
+   * add google-translate C-c t word under cursor
+   * Added Markdown-mode
+   * Added grep-settings for under cursor
    
    
