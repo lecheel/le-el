@@ -3,7 +3,7 @@ le-evil (emacs+vim+....)
 
 # installation
 ```
-$ git clone https://github.com/lecheel/le-el.git
+$ git clone https://github.com/lecheel/le-el.git ~/.rmacs.d
 $ ln -s ~/.emacs.d/emacsrc ~/.emacs
 ```
 

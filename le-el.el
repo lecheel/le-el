@@ -62,7 +62,9 @@
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
-
+(global-set-key (kbd "C-x M-w") 'kill-ring-save)
+(global-set-key (kbd "M-w") 'save-buffer)
+(global-set-key [(kp-add)] 'kill-ring-save)
 
 (evil-leader/set-key "y"  'xah-extend-selection)
 
