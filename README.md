@@ -18,4 +18,4 @@ evil-maps.el
 * does evil support <C-R><C-W> [word under cursor](https://github.com/tarao/evil-plugins) in Ex command-mode
 * does evil have [set paste](http://stackoverflow.com/questions/18691973/is-there-a-set-paste-option-in-emacs-to-paste-paste-from-external-clipboard) 
 * how to set "nowrapscan" ??
-
+* more understand [vim like emacs config](http://nathantypanski.com/blog/2014-08-03-a-vim-like-emacs-config.html)
