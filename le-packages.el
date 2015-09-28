@@ -1,9 +1,7 @@
 (require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;(add-to-list 'package-archives
-;	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
+(setq package-archives '(
+			("melpa" . "http://melpa.milkbox.net/packages/")
+			))
 
 (defun require-package (package &optional min-version no-refresh)
     "Install given PACKAGE, optionally requiring MIN-VERSION."
