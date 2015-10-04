@@ -56,6 +56,11 @@
 (evil-leader/set-key "v"  'exchange-point-and-mark)
 (evil-leader/set-key "o"  'find-grep-word)
 (evil-leader/set-key "so" 'find-grep-word)
+(evil-leader/set-key "gg" 'vc-git-grep)
+(evil-leader/set-key "gs" 'magit-status)
+(evil-leader/set-key "gd" 'magit-diff)
+(evil-leader/set-key "gl" 'magit-log-all)
+(evil-leader/set-key "k"  'kill-buffer)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; evil leader
