@@ -4,6 +4,19 @@
 ;;;
 ;;;
 
+(add-hook
+ 'pre-command-hook
+ (lambda ()
+   (when (eq menu-bar-mode 42)
+     (menu-bar-mode -1))))
+
+(defun leMenu ()
+  (interactive)
+  (unless menu-bar-mode
+  (menu-bar-mode 1))
+  (menu-bar-open)
+  (setq menu-bar-mode 42)
+  )
 
 (defun leQuit ()
   (interactive)

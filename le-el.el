@@ -62,7 +62,8 @@
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
-(global-set-key (kbd "C-x M-w") 'kill-ring-save)
+(global-set-key [(f9)] 'git-gutter-mode)
+(global-set-key [(f10)] 'leMenu)
 ;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
 
