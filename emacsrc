@@ -20,6 +20,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ediff-even-diff-Ancestor ((t (:background "Grey" :foreground "green"))))
+ '(ediff-even-diff-B ((t (:background "Grey" :foreground "magenta"))))
+ '(ediff-fine-diff-B ((t (:background "cyan"))))
+ '(ediff-odd-diff-A ((t (:background "Grey" :foreground "blue"))))
+ '(ediff-odd-diff-C ((t (:background "Grey" :foreground "green"))))
  '(font-lock-comment-face ((t (:foreground "color-22"))))
  '(font-lock-string-face ((t (:foreground "color-166")))))
 

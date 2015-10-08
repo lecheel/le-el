@@ -37,6 +37,7 @@
 	expand-region
 	git-gutter
 	google-translate
+	go-mode
 	helm
 	iedit
 	linum-relative
