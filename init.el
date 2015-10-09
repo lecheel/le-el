@@ -29,3 +29,5 @@
  
 (defalias 'yes-or-no-p 'y-or-n-p)
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(define-key evil-motion-state-map "K" 'find-grep-word)
+

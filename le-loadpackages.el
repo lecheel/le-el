@@ -52,6 +52,7 @@
 (setq evil-leader/in-all-states 1)
 (setq ace-jump-mode-gray-background nil)
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "K") 'find-grep-word)
 (evil-leader/set-key "l"  'evil-ace-jump-line-mode)
 (evil-leader/set-key "v"  'exchange-point-and-mark)
 (evil-leader/set-key "o"  'find-grep-word)

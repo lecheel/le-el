@@ -62,7 +62,6 @@
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
-(global-set-key [(f9)] 'git-gutter-mode)
 (global-set-key [(f10)] 'leMenu)
 ;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
@@ -71,6 +70,9 @@
 (evil-leader/set-key "n"  'git-gutter:next-hunk)
 (evil-leader/set-key "p"  'git-gutter:previous-hunk)
 (evil-leader/set-key "d"  'git-gutter:popup-hunk)
+
+;;; toggle
+(evil-leader/set-key "tl"  'linum-mode)
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -102,6 +104,8 @@
 
 (global-git-gutter-mode t)
 (setq git-gutter:separator-sign "|")
+(setq git-gutter:modified-sign "#")
+(setq git-gutter:added-sign "+")
 (set-face-foreground 'git-gutter:separator "yellow")
 ;; Jump to next/previous hunk
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
@@ -172,7 +176,8 @@
              (t (insert char)))))
         (insert-buffer-substring text)))))
 
-
+(setq linum-relative-current-symbol "")
+(setq linum-relative-format "%3s ")
 ;;;
 ;;; more tips from people switch from vim with evil
 ;;;
