@@ -21,7 +21,6 @@
 	ace-jump-buffer
 	ace-window
 	ace-popup-menu
-	ack
 	ack-menu
 	airline-themes
 	ag

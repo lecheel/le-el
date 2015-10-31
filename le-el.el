@@ -178,6 +178,7 @@
 
 (setq linum-relative-current-symbol "")
 (setq linum-relative-format "%3s ")
+(setq linum-format 'linum-relative)
 ;;;
 ;;; more tips from people switch from vim with evil
 ;;;
