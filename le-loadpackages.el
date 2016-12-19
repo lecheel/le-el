@@ -32,6 +32,7 @@
 (require 'multiple-cursors)
 (require 'powerline)
 (powerline-default-theme)
+(require 'airline-themes)
 (load-theme 'airline-papercolor t)
 
 ;; evil-leader

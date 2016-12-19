@@ -89,6 +89,8 @@
 ;;; vgrep
 ;;;
 
+(add-hook 'before-save-hook #'gofmt-before-save)
+
 (require 'vgrep-mode)
 (global-set-key "\M-'" 'vgrep)
 (global-set-key [(f11)]'vlist)

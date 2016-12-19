@@ -21,7 +21,7 @@
 (defun leQuit ()
   (interactive)
   (auto-save-mode nil)
-  (save-buffers-kill-terminal)
+ (save-buffers-kill-terminal)
 ;;  (save-buffers-kill-emacs)
 )
 
