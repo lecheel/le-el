@@ -29,6 +29,9 @@
 ;;(add-hook 'term-mode-hook (lambda()
 ;;    (setq yas-dont-activate t)))
 
+(require 'bracketed-paste)
+(bracketed-paste-enable)
+
 (require 'multiple-cursors)
 (require 'powerline)
 (powerline-default-theme)

@@ -6,7 +6,7 @@
 
 -- what's done
    * download the package if local elpa is empty
-   * disable menu-bar-mode, tool-bat-mode
+   * disable menu-bar-mode, tool-bar-mode
    * disable backup
    * add lestyle lisp in le-el.el for basic shortcut most like BRiEF key stoke
  
@@ -14,7 +14,7 @@
      * M-b 	 buffer list
      * M-d       delete line
      * M-e       file-find
-     * M-s       isearch
+     * C-s       isearch
      * M-t       replace
      * M-g       goto line
      * M-q	 quit
