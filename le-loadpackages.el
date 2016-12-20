@@ -89,8 +89,9 @@
 (evil-leader/set-key "sd" 'cscope-find-called-functions)
 (evil-leader/set-key "sg" 'cscope-find-global-definition)
 (evil-leader/set-key "su" 'cscope-pop-mark)
-
-
+		     
+(require 'phi-rectangle)
+(global-set-key (kbd "C-x <SPC>") 'phi-rectangle-set-mark-command)
 (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
 ;; Vim key bindings
 (require 'evil-leader)

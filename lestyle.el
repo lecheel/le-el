@@ -158,4 +158,12 @@ Version 2015-05-16"
   )
 
 
+(defun my-copy-rectangle (start end)
+   "Copy the region-rectangle instead of `kill-rectangle'."
+   (interactive "r")
+   (setq killed-rectangle (extract-rectangle start end))
+   (kill-ring-save start end))
+ 
+(global-set-key (kbd "C-x r c") 'my-copy-rectangle)
+
 (provide 'lestyle)
