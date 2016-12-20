@@ -49,7 +49,7 @@
 (global-set-key "\M--" 'le-previous-buffer) 
 (global-set-key "\M-=" 'le-next-buffer)
 (global-set-key "\M-b" 'ibuffer)
-(global-set-key "\M-c" 'er/mark-word)
+;;(global-set-key "\M-c" 'er/mark-word)
 (global-set-key "\M-c" 'set-rectangular-region-anchor)
 (global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
