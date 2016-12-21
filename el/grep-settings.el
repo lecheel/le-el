@@ -9,7 +9,7 @@ SYMBOL should be one of `grep-command', `grep-template',
   "Run `grep' to find current word in directory DIR."
   (interactive "P")
   (grep-compute-defaults)
-  (set-grep-command (concat "find . ! -name \"*~\" ! -name \".git\" -type f -exec grep -nH -e "))
+  (set-grep-command (concat "find . ! -name \"*.o\" ! -name \"*.pyc\" ! -name \"*.elc\" ! -name \"*~\" ! -name \".git\" -type f -exec grep -nH -e "))
   (let* ((word (current-word)) command-args)
     (if (not word)
         (message "No word under cursor.")

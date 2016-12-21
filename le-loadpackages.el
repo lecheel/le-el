@@ -19,6 +19,8 @@
 (define-key global-map (kbd "<kp-multiply>") 'git-gutter:previous-hunk)
 
 
+;;(require 'vdiff)
+
 ;; linum-mode 
 (require 'linum-relative)
 (global-linum-mode 1)
@@ -89,10 +91,28 @@
 (evil-leader/set-key "sd" 'cscope-find-called-functions)
 (evil-leader/set-key "sg" 'cscope-find-global-definition)
 (evil-leader/set-key "su" 'cscope-pop-mark)
-		     
+
+;; mix rectangle with orginal set-mark stream
 (require 'phi-rectangle)
+(phi-rectangle-mode 1)
+
 (global-set-key (kbd "C-x <SPC>") 'phi-rectangle-set-mark-command)
 (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+
+
+;; fixed for superwords _ underscore
+(with-eval-after-load 'evil
+  (defalias #'forward-evil-word #'forward-evil-symbol))
+
+(defadvice evil-inner-word (around underscore-as-word activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+
+(add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
 ;; Vim key bindings
 (require 'evil-leader)
 (global-evil-leader-mode)

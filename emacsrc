@@ -1,5 +1,5 @@
 ;;
-;; cp emacsrc ~/.emacs
+;; ln -s emacsrc ~/.emacs
 ;;
 
 
@@ -22,7 +22,30 @@
    (quote
     ("6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" default)))
  '(make-backup-files nil)
- '(menu-bar-mode nil))
+ '(menu-bar-mode nil)
+ '(auto-save-default nil)
+ '(backup-inhibited t)
+ '(make-backup-files nil)
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(column-number-mode t)
+ '(echo-keystrokes 0.01)
+ '(ediff-split-window-function (quote split-window-horizontally))
+ '(fill-column 78)
+ '(frame-title-format (quote ("%f - " user-real-login-name "@" system-name)) t)
+ '(indent-tabs-mode nil)
+ '(indicate-empty-lines t)
+ '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
+ '(history-delete-duplicates t)
+ '(linum-format "  %d  ")
+ '(puppet-indent-level tab-width)
+ '(recentf-max-saved-items 75)
+ '(require-final-newline t)
+ '(setq inhibit-startup-message t)
+ '(show-paren-delay 0)
+ '(show-paren-mode t)
+ '(tab-width 4)
+ '(transient-mark-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,6 +60,7 @@
  '(font-lock-string-face ((t (:foreground "color-166")))))
 
 (setq visible-bell t)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;;
 ;;; override key bindind is here
