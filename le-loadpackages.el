@@ -55,6 +55,11 @@
 ;; evil-leader
 (global-evil-leader-mode)
 (require 'evil-leader)
+
+;;
+;; nerdcommenter
+;;
+
 (evil-leader/set-key
   "ci" 'evilnc-comment-or-uncomment-lines
   "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
@@ -66,7 +71,6 @@
   )
 
 (evil-leader/set-leader ",")
-;;(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
 (evil-leader/set-key "SPC" 'ace-jump-mode)
 (setq evil-leader/in-all-states 1)
 (setq ace-jump-mode-gray-background nil)
@@ -76,7 +80,6 @@
 (evil-leader/set-key "l"  'evil-ace-jump-line-mode)
 (evil-leader/set-key "v"  'exchange-point-and-mark)
 (evil-leader/set-key "o"  'find-grep-word)
-;(evil-leader/set-key "so" 'find-grep-word)
 (evil-leader/set-key "gg" 'vc-git-grep)
 (evil-leader/set-key "gs" 'magit-status)
 (evil-leader/set-key "gd" 'magit-diff)
@@ -134,19 +137,4 @@
 (add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
-;; Vim key bindings
-(require 'evil-leader)
-(global-evil-leader-mode)
-(evil-leader/set-key
-  "ci" 'evilnc-comment-or-uncomment-lines
-  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
-  "cc" 'evilnc-copy-and-comment-lines
-  "cp" 'evilnc-comment-or-uncomment-paragraphs
-  "cr" 'comment-or-uncomment-region
-  "cv" 'evilnc-toggle-invert-comment-line-by-line
-  "\\" 'evilnc-comment-operator ; if you prefer backslash key
-  )
-
-;;(define-key global-map (kbd "C-\ s") 'cscope-find-this-symbol)
-;;(define-key global-map (kbd "C-\ e") 'cscope-find-egrep-pattern)
 

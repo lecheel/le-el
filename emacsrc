@@ -58,7 +58,7 @@
  '(ediff-fine-diff-B ((t (:background "cyan"))))
  '(ediff-odd-diff-A ((t (:background "Grey" :foreground "blue"))))
  '(ediff-odd-diff-C ((t (:background "Grey" :foreground "green"))))
- '(font-lock-comment-face ((t (:foreground "color-22"))))
+ '(font-lock-comment-face ((t (:foreground "brightblack"))))
  '(font-lock-string-face ((t (:foreground "color-166"))))
  '(org-agenda-structure ((t (:foreground "blue"))))
  '(org-clock-overlay ((t (:background "blue"))))
@@ -120,9 +120,14 @@
   (set-face-attribute
    'font-lock-doc-face nil :foreground "green")
 )
+
 (eval-after-load "diff-mode" '(custom-diff-colors))
+
 (global-set-key "\C-h" 'delete-backward-char)
+
 (define-key isearch-mode-map [(control h)] 'isearch-delete-char)
+
+(define-key evil-motion-state-map "K" 'find-grep-word)
 
 (defun evil-undefine ()
    (interactive)
