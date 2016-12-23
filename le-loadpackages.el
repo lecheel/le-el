@@ -19,11 +19,23 @@
 (define-key global-map (kbd "<kp-multiply>") 'git-gutter:previous-hunk)
 
 
-;;(require 'vdiff)
+(require 'vdiff)
+
+;;(require 'stock-ticker)
+;;(stock-ticker-global-mode +1)
+;;(setq stock-ticker-symbols '("3231.TW" "2353.TW"))
 
 ;; linum-mode 
 (require 'linum-relative)
 (global-linum-mode 1)
+
+;; nlinemum mode
+;;(require 'nlinum-relative)
+;;(nlinum-relative-setup-evil)                    ;; setup for evil
+;;(add-hook 'prog-mode-hook 'nlinum-relative-mode)
+;;(setq nlinum-relative-redisplay-delay 0)      ;; delay
+;;(setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
+;;(setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
 ;;(require 'yasnippet)
 ;;(yas-global-mode 1)
@@ -68,6 +80,8 @@
 (evil-leader/set-key "gs" 'magit-status)
 (evil-leader/set-key "gd" 'magit-diff)
 (evil-leader/set-key "gl" 'magit-log-all)
+(evil-leader/set-key "gp" 'magit-log-buffer-file)
+(evil-leader/set-key "go" 'magit-log-buffer-file-popup)
 (evil-leader/set-key "k"  'kill-buffer)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
@@ -110,6 +124,7 @@
     (with-syntax-table table
       ad-do-it)))
 
+(add-hook 'c-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
@@ -128,5 +143,4 @@
 
 ;;(define-key global-map (kbd "C-\ s") 'cscope-find-this-symbol)
 ;;(define-key global-map (kbd "C-\ e") 'cscope-find-egrep-pattern)
-
 

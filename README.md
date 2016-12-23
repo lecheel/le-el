@@ -1,6 +1,40 @@
 # le-el
 le-evil (emacs+vim+....)
 
+# QUiCK key binding
+  Fn                    Brief            
+-----------------   ---------------------
+  F2 DictTrans         Alt-Q Quit All    
+  F6 WinSwitch         Alt-B buffers     
+  F7 Match Bracket     Alt-E FileFind    
+  F8 FunctionList      Alt-D Delete Line 
+  F9 gitgutter Mode    Alt-Y Mark Word   
+                       Alt-- PrevBuffer  
+                       Alt-= NextBuffer  
+		      	    					   
+  EMaCS                           Leader
+----------------------------    -------------------
+  C-x C-c   Quit All              ,tl Toggle lineNo
+  C-x k     KillBuffer            ,n  gitgutter NextHunk
+  C-x 0     KillWindow            ,p  gitgutter PrevHunk
+  C-x 1     MaxWindow             ,d  gitgutter Diff
+  Alt-x     M-x Command
+  C-x C-s   SaveBuffer          == magit ==
+  C-x vr    gitgutter Revert      ,gd diff
+                                  ,gg grep
+                                  ,gl log
+                                  ,gs status
+
+ ViM MAGiC
+ ================================
+ C-v -> I 'typing...' <ESC><ESC> magic #!@$#
+ df<SPC>             delete before SPC
+ dt<SPC>             delete after SPC
+ :%s/<C-V><C-M>//g   remove all ^M
+ :%s/$/,/            Add , every end of line
+ gq                  reformat paragraph <select first>
+
+
 # installation
 ```
 $ git clone https://github.com/lecheel/le-el.git ~/.emacs.d

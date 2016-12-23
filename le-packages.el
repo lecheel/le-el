@@ -53,6 +53,8 @@
 	saveplace
 	xcscope
 	yasnippet
+    phi-rectangle
+    bracketed-paste
 	))
 
 ; fetch the list of packages available

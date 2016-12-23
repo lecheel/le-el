@@ -18,26 +18,26 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-default nil)
+ '(backup-inhibited t t)
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(column-number-mode t)
  '(custom-safe-themes
    (quote
     ("6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" default)))
- '(make-backup-files nil)
- '(menu-bar-mode nil)
- '(auto-save-default nil)
- '(backup-inhibited t)
- '(make-backup-files nil)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
- '(column-number-mode t)
  '(echo-keystrokes 0.01)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
  '(frame-title-format (quote ("%f - " user-real-login-name "@" system-name)) t)
+ '(history-delete-duplicates t)
  '(indent-tabs-mode nil)
  '(indicate-empty-lines t)
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
- '(history-delete-duplicates t)
  '(linum-format "  %d  ")
+ '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "--patch")))
+ '(make-backup-files nil)
+ '(menu-bar-mode nil)
  '(puppet-indent-level tab-width)
  '(recentf-max-saved-items 75)
  '(require-final-newline t)
@@ -51,13 +51,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(diff-refine-changed ((t (:background "yellow"))))
  '(ediff-even-diff-Ancestor ((t (:background "Grey" :foreground "green"))))
  '(ediff-even-diff-B ((t (:background "Grey" :foreground "magenta"))))
  '(ediff-fine-diff-B ((t (:background "cyan"))))
  '(ediff-odd-diff-A ((t (:background "Grey" :foreground "blue"))))
  '(ediff-odd-diff-C ((t (:background "Grey" :foreground "green"))))
  '(font-lock-comment-face ((t (:foreground "color-22"))))
- '(font-lock-string-face ((t (:foreground "color-166")))))
+ '(font-lock-string-face ((t (:foreground "color-166"))))
+ '(org-agenda-structure ((t (:foreground "blue"))))
+ '(org-clock-overlay ((t (:background "blue"))))
+ '(org-table ((t (:foreground "green")))))
 
 (setq visible-bell t)
 (defalias 'yes-or-no-p 'y-or-n-p)

@@ -64,6 +64,7 @@
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
 (global-set-key [(f10)] 'leMenu)
+(global-set-key [(f3)] 'save-buffer)
 ;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
 
@@ -180,6 +181,9 @@
 (setq linum-relative-current-symbol "")
 (setq linum-relative-format "%3s ")
 (setq linum-format 'linum-relative)
+
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+
 ;;;
 ;;; more tips from people switch from vim with evil
 ;;;
