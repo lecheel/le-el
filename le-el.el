@@ -1,7 +1,7 @@
 ; ~/.emacs.d/le-el.el
 (load "~/.emacs.d/lestyle.el")
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el"))
-
+(add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
@@ -9,6 +9,7 @@
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(setq-default tab-width 4 indent-tabs-mode nil)
 
 ;; Remember the cursor position of files when reopening them
 (setq save-place-file "~/.emacs.d/saveplace")

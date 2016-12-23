@@ -66,10 +66,11 @@
   )
 
 (evil-leader/set-leader ",")
-(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+;;(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+(evil-leader/set-key "SPC" 'ace-jump-mode)
 (setq evil-leader/in-all-states 1)
 (setq ace-jump-mode-gray-background nil)
-(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-char-mode)
 (define-key evil-normal-state-map (kbd "K") 'find-grep-word)
 (define-key evil-motion-state-map (kbd "RET") nil)
 (evil-leader/set-key "l"  'evil-ace-jump-line-mode)
@@ -82,7 +83,9 @@
 (evil-leader/set-key "gl" 'magit-log-all)
 (evil-leader/set-key "gp" 'magit-log-buffer-file)
 (evil-leader/set-key "go" 'magit-log-buffer-file-popup)
+(evil-leader/set-key "gb" 'magit-show-refs)
 (evil-leader/set-key "k"  'kill-buffer)
+(evil-leader/set-key ";"  'evilnc-comment-or-uncomment-lines)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; evil leader
@@ -92,6 +95,9 @@
 (require 'iedit)
 (global-set-key (kbd "C-c =") 'iedit-mode)
 (evil-leader/set-key "=" 'iedit-mode)
+
+
+(global-set-key (kbd "M-p") 'ace-window)
 
 ;; the silver searcher ag
 (require 'ag)

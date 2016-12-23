@@ -1,23 +1,23 @@
 
--- leSTYPE EmACS from scratch
-   * le-el.el			personal leStyle lisp
-   * le-packages.el		list-packages
+#  leSTYPE EmACS from scratch
+   * le-el.el			    personal leStyle lisp
+   * le-packages.el		    list-packages
    * le-loadpackages.el		which package want to load
 
--- what's done
+#  what's done
    * download the package if local elpa is empty
    * disable menu-bar-mode, tool-bar-mode
    * disable backup
    * add lestyle lisp in le-el.el for basic shortcut most like BRiEF key stoke
  
      * M-- M-=   buffer prev/next  skip ^* scratch buffer
-     * M-b 	 buffer list
+     * M-b 	     buffer list
      * M-d       delete line
      * M-e       file-find
      * C-s       isearch
      * M-t       replace
      * M-g       goto line
-     * M-q	 quit
+     * M-q	     quit
 
    * add magit, ace-jump, xcscope, evil ...
    * add powerline and airline-themes also linum-relative

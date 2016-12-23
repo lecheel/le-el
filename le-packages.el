@@ -33,6 +33,7 @@
 	evil-nerd-commenter
 	evil-search-highlight-persist
 	evil-visualstar
+    evil-org
 	expand-region
 	git-gutter
 	google-translate
