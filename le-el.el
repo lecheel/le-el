@@ -59,7 +59,7 @@
 (global-set-key "\M-q" 'leQuit)
 ;;(global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
-(global-set-key "\M-y" 'er/mark-word)
+(global-set-key "\M-y" 'er/expand-region)
 (global-set-key [(f6)] 'other-window)
 (global-set-key [(f8)] 'taglist)
 (global-set-key [(f7)] 'evil-jump-item)
@@ -68,11 +68,6 @@
 (global-set-key [(f3)] 'save-buffer)
 ;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
-
-(evil-leader/set-key "y"  'xah-extend-selection)
-(evil-leader/set-key "n"  'git-gutter:next-hunk)
-(evil-leader/set-key "p"  'git-gutter:previous-hunk)
-(evil-leader/set-key "d"  'git-gutter:popup-hunk)
 
 ;;; toggle
 (evil-leader/set-key "tl"  'linum-mode)
@@ -110,6 +105,13 @@
 (setq git-gutter:modified-sign "#")
 (setq git-gutter:added-sign "+")
 (set-face-foreground 'git-gutter:separator "yellow")
+
+(evil-leader/set-key "y"  'xah-extend-selection)
+(evil-leader/set-key "n"  'git-gutter:next-hunk)
+(evil-leader/set-key "p"  'git-gutter:previous-hunk)
+(evil-leader/set-key "d"  'git-gutter:popup-hunk)
+(evil-leader/set-key "r"  'git-gutter:revert-hunk)
+
 ;; Jump to next/previous hunk
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)

@@ -1,6 +1,12 @@
 # le-el
 le-evil (emacs+vim+....)
 
+# installation
+```
+$ git clone https://github.com/lecheel/le-el.git ~/.emacs.d
+$ ln -s ~/.emacs.d/emacsrc ~/.emacs
+```
+
 # QUiCK key binding
   Fn                    Brief            
 -----------------   ---------------------
@@ -26,7 +32,7 @@ le-evil (emacs+vim+....)
                                   ,gs status
 
  ViM MAGiC
- ================================
+-------------------------------------------
  C-v -> I 'typing...' <ESC><ESC> magic #!@$#
  df<SPC>             delete before SPC
  dt<SPC>             delete after SPC
@@ -34,12 +40,6 @@ le-evil (emacs+vim+....)
  :%s/$/,/            Add , every end of line
  gq                  reformat paragraph <select first>
 
-
-# installation
-```
-$ git clone https://github.com/lecheel/le-el.git ~/.emacs.d
-$ ln -s ~/.emacs.d/emacsrc ~/.emacs
-```
 
 # tips
 * some mode RET not working for <RET>

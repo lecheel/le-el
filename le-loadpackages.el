@@ -89,6 +89,7 @@
 (evil-leader/set-key "gb" 'magit-show-refs)
 (evil-leader/set-key "k"  'kill-buffer)
 (evil-leader/set-key ";"  'evilnc-comment-or-uncomment-lines)
+
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; evil leader
