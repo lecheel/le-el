@@ -2,6 +2,7 @@
 (load "~/.emacs.d/lestyle.el")
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el"))
 (add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
@@ -26,7 +27,7 @@
 (set-face-attribute 'google-translate-translation-face nil :height 1.4)
 
 (require 'bind-key)
-(bind-key* "C-h" 'backward-delete-char)
+;;(bind-key* "C-h" 'backward-delete-char)
 (require 'helm)
 (bind-key "C-h" nil helm-map)
 
@@ -50,14 +51,11 @@
 (global-set-key "\M--" 'le-previous-buffer) 
 (global-set-key "\M-=" 'le-next-buffer)
 (global-set-key "\M-b" 'ibuffer)
-;;(global-set-key "\M-c" 'er/mark-word)
-;;(global-set-key "\M-c" 'set-rectangular-region-anchor)
 (global-set-key "\M-c" 'phi-rectangle-set-mark-command)
 (global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
 ;;(global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-q" 'leQuit)
-;;(global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
 (global-set-key "\M-y" 'er/expand-region)
 (global-set-key [(f6)] 'other-window)
@@ -119,6 +117,8 @@
 (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
 ;; Revert current hunk
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+(global-set-key [\M-down] 'next-error)
+(global-set-key [\M-up] 'previous-error)
 
 
 ;;;

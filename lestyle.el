@@ -57,8 +57,9 @@
 (defun leTag ()
   "ctags"
   (interactive nil)
-  (setq tags-table-list (list(substring (getenv "TAGFILE") 0 -4)))
-  (etags-select-find-tag-at-point)
+  (setq tags-table-list (list(concat (substring (getenv "TAGFILE") 0 -4) "TAGS")))
+  (evil-jump-to-tag)
+;;  (etags-select-find-tag-at-point)
 )
 
 (defun leTagX ()

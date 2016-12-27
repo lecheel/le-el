@@ -56,6 +56,7 @@
 	yasnippet
     phi-rectangle
     bracketed-paste
+    vdiff
 	))
 
 ; fetch the list of packages available

@@ -123,7 +123,7 @@
 
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
-(global-set-key "\C-h" 'delete-backward-char)
+;;(global-set-key "\C-h" 'delete-backward-char)
 
 (define-key isearch-mode-map [(control h)] 'isearch-delete-char)
 
