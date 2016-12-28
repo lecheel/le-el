@@ -54,7 +54,6 @@
 (global-set-key "\M-c" 'phi-rectangle-set-mark-command)
 (global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
-;;(global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-q" 'leQuit)
 (global-set-key "\M-t" 'query-replace)
 (global-set-key "\M-y" 'er/expand-region)
@@ -64,7 +63,6 @@
 (global-set-key [(f9)] 'git-gutter-mode)
 (global-set-key [(f10)] 'leMenu)
 (global-set-key [(f3)] 'save-buffer)
-;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
 
 ;;; toggle
@@ -80,11 +78,6 @@
 ;;;
 (require 'wgrep-ack)
 (require 'wgrep-ag)
-
-(require 'highlight)
-(require 'evil-search-highlight-persist)
-(global-evil-search-highlight-persist t)
-
 
 ;;;
 ;;; vgrep
