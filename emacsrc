@@ -24,7 +24,7 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" default)))
+    ("9b1c580339183a8661a84f5864a6c363260c80136bd20ac9f00d7e1d662e936a" "6998bd3671091820a6930b52aab30b776faea41449b4246fdce14079b3e7d125" default)))
  '(echo-keystrokes 0.01)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
@@ -121,6 +121,13 @@
    'font-lock-doc-face nil :foreground "green")
 )
 
+
+
+;;  (custom-theme-set-faces
+;;   'airline-colorpaper
+;;   ;; default
+;;   `(lazy-highlight ((,class (:foreground ,fg2 :background ,bg3))))
+;;   )
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
 ;;(global-set-key "\C-h" 'delete-backward-char)

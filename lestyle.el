@@ -129,18 +129,15 @@ URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
 Version 2015-05-16"
     (interactive)
     (let (
-	  (ξskipChars
+	  (-skipChars
 	   (if (boundp 'xah-brackets)
 	       (concat "^\"" xah-brackets)
 	     "^\"<>(){}[]“”‘’‹›«»「」『』【】〖〗《》〈〉〔〕（）"))
-	  ξp1
-	  ξp2
-	  )
-      (skip-chars-backward ξskipChars)
-      (setq ξp1 (point))
-      (skip-chars-forward ξskipChars)
-      (setq ξp2 (point))
-      (set-mark ξp1)))
+	  -pos)
+      (skip-chars-backward -skipChars)
+      (setq -pos (point))
+      (skip-chars-forward -skipChars)
+      (set-mark -pos)))
 
 
 (defun le-select-word ()

@@ -81,6 +81,11 @@
 (require 'wgrep-ack)
 (require 'wgrep-ag)
 
+(require 'highlight)
+(require 'evil-search-highlight-persist)
+(global-evil-search-highlight-persist t)
+
+
 ;;;
 ;;; vgrep
 ;;;
@@ -195,3 +200,4 @@
 ;;;
 ;;;
 
+;;(define-key evil-search-highlight-persist-map (kbd "ESC") 'evil-search-highlight-persist-remove-all)
