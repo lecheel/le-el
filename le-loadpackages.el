@@ -14,8 +14,6 @@
 (define-key global-map (kbd "<kp-multiply>") 'git-gutter:previous-hunk)
 
 
-(require 'vdiff)
-
 ;;(require 'stock-ticker)
 ;;(stock-ticker-global-mode +1)
 ;;(setq stock-ticker-symbols '("3231.TW" "2353.TW"))

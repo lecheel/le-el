@@ -7,7 +7,7 @@ SYMBOL should be one of `grep-command', `grep-template',
 
 (defun find-grep-word (dir)
   "Run `grep' to find current word in directory DIR."
-  (interactive nil)
+  (interactive "P")
   (grep-compute-defaults)
   (set-grep-command (concat "find . ! -name \"*.o\" ! -name \"*.pyc\" ! -name \"*.elc\" ! -name \"*~\" ! -name \".git\" -type f -exec grep -nH -e "))
   (let* ((word (current-word)) command-args)
