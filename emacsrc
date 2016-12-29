@@ -23,9 +23,7 @@
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(column-number-mode t)
  '(create-lockfiles nil)
- '(custom-safe-themes
-   (quote
-    ("" default)))
+ '(custom-safe-themes (quote ("" default)))
  '(echo-keystrokes 0.01)
  '(ediff-split-window-function (quote split-window-horizontally))
  '(fill-column 78)
@@ -62,12 +60,15 @@
  '(ediff-odd-diff-C ((t (:background "Grey" :foreground "green"))))
  '(font-lock-comment-face ((t (:foreground "brightblack"))))
  '(font-lock-string-face ((t (:foreground "color-166"))))
+ '(helm-selection ((t (:background "yellow" :distant-foreground "green"))))
  '(org-agenda-structure ((t (:foreground "blue"))))
  '(org-clock-overlay ((t (:background "blue"))))
  '(org-table ((t (:foreground "green")))))
 
 (setq visible-bell t)
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+(set-face-foreground 'minibuffer-prompt "white")
 
 ;;;
 ;;; override key bindind is here

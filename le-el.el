@@ -13,3 +13,5 @@
 
 (global-set-key "\C-h" 'delete-backward-char)
 
+;;; super M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
