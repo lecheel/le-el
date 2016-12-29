@@ -21,12 +21,17 @@ re-downloaded in order to locate PACKAGE."
       '(
 	evil
 	evil-leader
+	evil-matchit
+	evil-paredit
 	linum
 	magit
+	expand-region
+	evil-visualstar
 	git-gutter
 	powerline
 	airline-themes
     helm
+    phi-rectangle
 	))
 
 ; fetch the list of packages available

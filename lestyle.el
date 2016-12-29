@@ -18,6 +18,19 @@
   (setq menu-bar-mode 42)
   )
 
+(defun leQuit ()
+  (interactive)
+  (auto-save-mode nil)
+  (save-buffers-kill-terminal)
+;;  (save-buffers-kill-emacs)
+)
+
+(defun leSave ()
+  (interactive)
+  (if (and mark-active transient-mark-mode)
+      (kill-ring-save (region-beginning) (region-end))
+    (save-buffer)
+    ))
 
 (defun le-next-buffer()
   (interactive)

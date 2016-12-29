@@ -34,7 +34,10 @@
 ;;(setq ace-jump-mode-gray-background nil)
 ;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
+(require 'paredit)
 
+(require 'phi-rectangle)
+(phi-rectangle-mode 1)
 
 ;; cscope
 (require 'xcscope)
