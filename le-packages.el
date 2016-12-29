@@ -19,20 +19,21 @@ re-downloaded in order to locate PACKAGE."
 
 (setq package-list
       '(
-	evil
-	evil-leader
-	evil-matchit
-	evil-paredit
-	linum
-	magit
-	expand-region
-	evil-visualstar
-	git-gutter
-	powerline
-	airline-themes
-    helm
-    phi-rectangle
-	))
+        evil
+        evil-leader
+        evil-matchit
+        evil-paredit
+        linum
+        magit
+        expand-region
+        evil-visualstar
+        git-gutter
+        powerline
+        airline-themes
+        saveplace
+    	helm
+    	phi-rectangle
+        ))
 
 ; fetch the list of packages available
 (unless package-archive-contents
