@@ -68,7 +68,7 @@
 (setq visible-bell t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(set-face-foreground 'minibuffer-prompt "white")
+(set-face-foreground 'minibuffer-prompt "green")
 
 ;;;
 ;;; override key bindind is here

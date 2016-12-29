@@ -20,6 +20,10 @@
 ;;(add-hook 'term-mode-hook (lambda()
 ;;    (setq yas-dont-activate t)))
 
+(require 'powerline)
+(powerline-default-theme)
+(require 'airline-themes)
+(load-theme 'airline-papercolor t)
 
 ;; evil-leader
 (require 'evil-leader)
