@@ -1,8 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;(add-to-list 'package-archives
-;	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 
 (defun require-package (package &optional min-version no-refresh)
@@ -25,8 +23,6 @@ re-downloaded in order to locate PACKAGE."
 	evil-leader
 	linum
 	magit
-	xcscope
-	yasnippet
 	))
 
 ; fetch the list of packages available
