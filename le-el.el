@@ -21,3 +21,17 @@
 
 ;;; custom f10 MENU
 (global-set-key [(f10)] 'leMenu)
+
+;;; git-gutter
+(global-git-gutter-mode t)
+(setq git-gutter:separator-sign "|")
+(setq git-gutter:modified-sign "#")
+(setq git-gutter:added-sign "+")
+
+(evil-leader/set-key "y"  'xah-extend-selection)
+(evil-leader/set-key "n"  'git-gutter:next-hunk)
+(evil-leader/set-key "p"  'git-gutter:previous-hunk)
+(evil-leader/set-key "d"  'git-gutter:popup-hunk)
+(evil-leader/set-key "r"  'git-gutter:revert-hunk)
+
+

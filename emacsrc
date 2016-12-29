@@ -52,6 +52,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(airline-visual-inner ((t (:background "brightblack" :foreground "white"))))
  '(diff-refine-changed ((t (:background "yellow"))))
  '(ediff-even-diff-Ancestor ((t (:background "Grey" :foreground "green"))))
  '(ediff-even-diff-B ((t (:background "Grey" :foreground "magenta"))))
@@ -61,6 +62,7 @@
  '(font-lock-comment-face ((t (:foreground "brightblack"))))
  '(font-lock-string-face ((t (:foreground "color-166"))))
  '(helm-selection ((t (:background "yellow" :distant-foreground "green"))))
+ '(helm-visible-mark ((t (:background "green"))))
  '(org-agenda-structure ((t (:foreground "blue"))))
  '(org-clock-overlay ((t (:background "blue"))))
  '(org-table ((t (:foreground "green")))))
@@ -124,11 +126,11 @@
 
 
 
-;;  (custom-theme-set-faces
-;;   'airline-colorpaper
-;;   ;; default
-;;   `(lazy-highlight ((,class (:foreground ,fg2 :background ,bg3))))
-;;   )
+(custom-theme-set-faces 'airline-papercolor
+                        '(region ((t :background "green")))
+                        )
+
+
 (eval-after-load "diff-mode" '(custom-diff-colors))
 
 ;;(global-set-key "\C-h" 'delete-backward-char)

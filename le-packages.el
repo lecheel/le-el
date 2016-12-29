@@ -23,6 +23,7 @@ re-downloaded in order to locate PACKAGE."
 	evil-leader
 	linum
 	magit
+	git-gutter
 	powerline
 	airline-themes
     helm
