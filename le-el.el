@@ -9,9 +9,18 @@
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(setq-default tab-width 4 indent-tabs-mode nil)
 
 ;(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 (setq make-backup-files nil)
+(setq save-place-file "~/.emacs.d/saveplace")
+(setq-default save-place t)
+(require 'saveplace)
+;; Disable prompt asking you if you want to kill a
+;; buffer with a live process attached to it.
+;; http://stackoverflow.com/questions/268088/how-to-remove-the-prompt-for-killing-emacsclient-buffers
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
 
 (global-set-key "\C-h" 'delete-backward-char)
 
@@ -57,4 +66,17 @@
 (evil-leader/set-key "d"  'git-gutter:popup-hunk)
 (evil-leader/set-key "r"  'git-gutter:revert-hunk)
 
+(global-set-key [\M-down] 'next-error)
+(global-set-key [\M-up] 'previous-error)
+
+;;;
+;;; emacs daemon and emacs client clean up
+;;;
+
+(add-hook 'delete-frame-functions
+          (lambda (frame)
+            (let* ((window (frame-selected-window frame))
+                   (buffer (and window (window-buffer window))))
+              (when (and buffer (buffer-file-name buffer))
+                (kill-buffer buffer)))))
 
