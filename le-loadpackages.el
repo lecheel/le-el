@@ -20,7 +20,7 @@
 
 ;; linum-mode 
 (require 'linum-relative)
-(global-linum-mode 1)
+(global-linum-mode nil)
 
 ;; nlinemum mode
 ;;(require 'nlinum-relative)
