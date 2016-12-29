@@ -1,4 +1,7 @@
 ; ~/.emacs.d/le-el.el
+(load "~/.emacs.d/lestyle.el")
+(add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
@@ -15,3 +18,6 @@
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+;;; custom f10 MENU
+(global-set-key [(f10)] 'leMenu)
