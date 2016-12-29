@@ -19,20 +19,45 @@ re-downloaded in order to locate PACKAGE."
 
 (setq package-list
       '(
+        ace-jump-mode
+        ace-jump-buffer
+        ace-window
+        ace-popup-menu
+        ack-menu
+        airline-themes
+        ag
+        bind-key
+        etags-select
         evil
         evil-leader
         evil-matchit
         evil-paredit
-        linum
-        magit
-        expand-region
+        evil-nerd-commenter
+        evil-search-highlight-persist
         evil-visualstar
+        evil-org
+        expand-region
         git-gutter
+        google-translate
+        go-mode
+        helm
+        iedit
+        linum-relative
+        magit
+        markdown-mode
+        markdown-mode+
+        multiple-cursors
+        paredit
         powerline
-        airline-themes
+        powerline-evil
+        wgrep
+        wgrep-ack
+        wgrep-ag
         saveplace
-    	helm
-    	phi-rectangle
+        xcscope
+        yasnippet
+        phi-rectangle
+        bracketed-paste
         ))
 
 ; fetch the list of packages available

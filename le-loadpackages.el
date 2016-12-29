@@ -11,8 +11,10 @@
 (require 'evil)
 (evil-mode t)
 
+(require 'expand-region)
 (require 'magit)
 (define-key global-map (kbd "C-c m") 'magit-status)
+(require 'linum-relative)
 
 ;;(require 'yasnippet)
 ;;(yas-global-mode 1)
@@ -20,6 +22,8 @@
 ;;(add-hook 'term-mode-hook (lambda()
 ;;    (setq yas-dont-activate t)))
 
+(require 'bracketed-paste)
+(bracketed-paste-enable)
 (require 'powerline)
 (powerline-default-theme)
 (require 'airline-themes)
@@ -35,9 +39,56 @@
 ;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
 (require 'paredit)
+;;
+;; nerdcommenter
+;;
 
-(require 'phi-rectangle)
-(phi-rectangle-mode 1)
+(evil-leader/set-key
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+  "\\" 'evilnc-comment-operator ; if you prefer backslash key
+  )
+
+(evil-leader/set-leader ",")
+(evil-leader/set-key "SPC" 'ace-jump-mode)
+(setq evil-leader/in-all-states 1)
+(setq ace-jump-mode-gray-background nil)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-char-mode)
+(define-key evil-normal-state-map (kbd "K") 'find-grep-word)
+(define-key evil-motion-state-map (kbd "RET") nil)
+(evil-leader/set-key "l"  'evil-ace-jump-line-mode)
+(evil-leader/set-key "v"  'exchange-point-and-mark)
+(evil-leader/set-key "o"  'find-grep-word)
+(evil-leader/set-key "gg" 'vc-git-grep)
+(evil-leader/set-key "gs" 'magit-status)
+(evil-leader/set-key "gd" 'magit-diff)
+(evil-leader/set-key "gl" 'magit-log-all)
+(evil-leader/set-key "gp" 'magit-log-buffer-file)
+(evil-leader/set-key "go" 'magit-log-buffer-file-popup)
+(evil-leader/set-key "gb" 'magit-show-refs)
+(evil-leader/set-key "k"  'kill-buffer)
+(evil-leader/set-key ";"  'evilnc-comment-or-uncomment-lines)
+
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+
+;; evil leader
+;;(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+
+;; iedit for block operation like multiple-cursors
+(require 'iedit)
+(global-set-key (kbd "C-c =") 'iedit-mode)
+(evil-leader/set-key "=" 'iedit-mode)
+
+
+(global-set-key (kbd "M-p") 'ace-window)
+
+;; the silver searcher ag
+(require 'ag)
+(setq ag-highlight-search t)
 
 ;; cscope
 (require 'xcscope)
@@ -48,4 +99,25 @@
 (evil-leader/set-key "sg" 'cscope-find-global-definition)
 (evil-leader/set-key "su" 'cscope-pop-mark)
 
+;; mix rectangle with orginal set-mark stream
+(require 'phi-rectangle)
+(phi-rectangle-mode 1)
+
+(global-set-key (kbd "C-x <SPC>") 'phi-rectangle-set-mark-command)
+(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+
+
+;; fixed for superwords _ underscore
+(with-eval-after-load 'evil
+  (defalias #'forward-evil-word #'forward-evil-symbol))
+
+(defadvice evil-inner-word (around underscore-as-word activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))
+
+(add-hook 'c-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
