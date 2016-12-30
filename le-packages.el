@@ -58,6 +58,7 @@ re-downloaded in order to locate PACKAGE."
         yasnippet
         phi-rectangle
         bracketed-paste
+	rainbow-delimiters
         ))
 
 ; fetch the list of packages available

@@ -90,6 +90,9 @@
 (require 'ag)
 (setq ag-highlight-search t)
 
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 ;; cscope
 (require 'xcscope)
 (evil-leader/set-key "ss" 'cscope-find-this-symbol)
