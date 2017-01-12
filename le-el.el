@@ -2,6 +2,8 @@
 (load "~/.emacs.d/lestyle.el")
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el"))
 (add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
+(add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
+(add-to-list 'auto-mode-alist '("\\.spacemacs\\'" . lisp-mode))
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
@@ -11,10 +13,10 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq-default tab-width 4 indent-tabs-mode nil)
 
-;; Remember the cursor position of files when reopening them
+(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+(setq make-backup-files nil)
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
-(require 'saveplace)
 
 (require 'google-translate)
 (require 'google-translate-default-ui)
@@ -25,57 +27,52 @@
 (global-set-key "\C-cT" 'google-translate-query-translate)
 (set-face-attribute 'google-translate-translation-face nil :height 1.4)
 
+(require 'saveplace)
 (require 'bind-key)
-(bind-key* "C-h" 'backward-delete-char)
-(require 'helm)
-(bind-key "C-h" nil helm-map)
-
-
 ;; Disable prompt asking you if you want to kill a
 ;; buffer with a live process attached to it.
 ;; http://stackoverflow.com/questions/268088/how-to-remove-the-prompt-for-killing-emacsclient-buffers
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
-;; paredit
-(require 'paredit)
 
 (require 'grep-settings)
 
-;;
-;; leStyle key binding
-;; 
+;;; super M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
 
+;;; custom f10 MENU
+(global-set-key [(f10)] 'leMenu)
+
+;;; QuitAll
+(global-set-key "\M-q" 'leQuit)
+
+;;; basic brief binding
 (global-set-key "\C-k" 'paredit-kill)
-(global-set-key "\C-q" 'leQuit)
 (global-set-key "\M--" 'le-previous-buffer) 
 (global-set-key "\M-=" 'le-next-buffer)
 (global-set-key "\M-b" 'ibuffer)
-;;(global-set-key "\M-c" 'er/mark-word)
-;;(global-set-key "\M-c" 'set-rectangular-region-anchor)
 (global-set-key "\M-c" 'phi-rectangle-set-mark-command)
 (global-set-key "\M-d" 'kill-whole-line)
 (global-set-key "\M-e" 'find-file)
-;;(global-set-key "\M-g" 'goto-line)
-(global-set-key "\M-q" 'leQuit)
-;;(global-set-key "\M-s" 'isearch-forward)
 (global-set-key "\M-t" 'query-replace)
-(global-set-key "\M-y" 'er/mark-word)
-(global-set-key [(f6)] 'other-window)
-(global-set-key [(f8)] 'taglist)
+(global-set-key "\M-y" 'er/expand-region)
+
+;;(global-set-key [(f6)] 'other-window)
+(global-set-key [(f6)] 'ace-window)
+;;(global-set-key [(f8)] 'taglist)
+(global-set-key [(f8)] 'imenu-list)
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
-(global-set-key [(f10)] 'leMenu)
 (global-set-key [(f3)] 'save-buffer)
-;;(global-set-key (kbd "M-w") 'save-buffer)
 (global-set-key [(kp-add)] 'kill-ring-save)
-
-(evil-leader/set-key "y"  'xah-extend-selection)
-(evil-leader/set-key "n"  'git-gutter:next-hunk)
-(evil-leader/set-key "p"  'git-gutter:previous-hunk)
-(evil-leader/set-key "d"  'git-gutter:popup-hunk)
 
 ;;; toggle
 (evil-leader/set-key "tl"  'linum-mode)
+(evil-leader/set-key "tr"  'rainbow-delimiters-mode)
+(evil-leader/set-key "tg"  'git-gutter-mode)
+(evil-leader/set-key "x"   'delete-window)
+(evil-leader/set-key "1"   'delete-other-windows)
+
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -110,6 +107,18 @@
 (setq git-gutter:modified-sign "#")
 (setq git-gutter:added-sign "+")
 (set-face-foreground 'git-gutter:separator "yellow")
+
+(evil-leader/set-key "y"  'xah-extend-selection)
+(evil-leader/set-key "n"  'git-gutter:next-hunk)
+(evil-leader/set-key "p"  'git-gutter:previous-hunk)
+(evil-leader/set-key "d"  'git-gutter:popup-hunk)
+(evil-leader/set-key "r"  'git-gutter:revert-hunk)
+
+(global-set-key [(kp-add)] 'git-gutter:next-hunk)
+(global-set-key [(kp-subtract)] 'git-gutter:previous-hunk)
+(global-set-key [(kp-multiply)] 'git-gutter:popup-hunk)
+
+
 ;; Jump to next/previous hunk
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
@@ -117,6 +126,10 @@
 (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
 ;; Revert current hunk
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+(global-set-key [\M-down] 'next-error)
+(global-set-key [\M-up] 'previous-error)
+(evil-leader/set-key "]"  'next-error)
+(evil-leader/set-key "["  'previous-error)
 
 
 ;;;

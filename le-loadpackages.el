@@ -3,39 +3,18 @@
 (load "~/.emacs.d/le-packages.el")
 
 ;;; evil mode
-(require-package 'evil)
-(setq evil-search-module 'evil-search
-      evil-want-C-u-scroll t
-      evil-want-C-w-in-emacs-state t)
+;;;(require-package 'evil)
+;;;(setq evil-search-module 'evil-search
+;;;      evil-want-C-u-scroll t
+;;;      evil-want-C-w-in-emacs-state t)
 
 (require 'evil)
 (evil-mode t)
 
-
 (require 'expand-region)
 (require 'magit)
-(define-key global-map (kbd "C-c g") 'magit-status)
-(define-key global-map (kbd "<kp-divide>")   'git-gutter:next-hunk)
-(define-key global-map (kbd "<kp-multiply>") 'git-gutter:previous-hunk)
-
-
-(require 'vdiff)
-
-;;(require 'stock-ticker)
-;;(stock-ticker-global-mode +1)
-;;(setq stock-ticker-symbols '("3231.TW" "2353.TW"))
-
-;; linum-mode 
+(define-key global-map (kbd "C-c m") 'magit-status)
 (require 'linum-relative)
-(global-linum-mode 1)
-
-;; nlinemum mode
-;;(require 'nlinum-relative)
-;;(nlinum-relative-setup-evil)                    ;; setup for evil
-;;(add-hook 'prog-mode-hook 'nlinum-relative-mode)
-;;(setq nlinum-relative-redisplay-delay 0)      ;; delay
-;;(setq nlinum-relative-current-symbol "->")      ;; or "" for display current line number
-;;(setq nlinum-relative-offset 0)                 ;; 1 if you want 0, 2, 3...
 
 ;;(require 'yasnippet)
 ;;(yas-global-mode 1)
@@ -45,17 +24,21 @@
 
 (require 'bracketed-paste)
 (bracketed-paste-enable)
-
-(require 'multiple-cursors)
 (require 'powerline)
 (powerline-default-theme)
 (require 'airline-themes)
 (load-theme 'airline-papercolor t)
 
 ;; evil-leader
-(global-evil-leader-mode)
 (require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader ",")
+(evil-leader/set-key "SPC" 'evil-search-highlight-persist-remove-all)
+;;(setq evil-leader/in-all-states 1)
+;;(setq ace-jump-mode-gray-background nil)
+;;(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
+(require 'paredit)
 ;;
 ;; nerdcommenter
 ;;
@@ -83,12 +66,13 @@
 (evil-leader/set-key "gg" 'vc-git-grep)
 (evil-leader/set-key "gs" 'magit-status)
 (evil-leader/set-key "gd" 'magit-diff)
-(evil-leader/set-key "gl" 'magit-log-all)
+(evil-leader/set-key "gl" 'magit-log)
 (evil-leader/set-key "gp" 'magit-log-buffer-file)
 (evil-leader/set-key "go" 'magit-log-buffer-file-popup)
 (evil-leader/set-key "gb" 'magit-show-refs)
 (evil-leader/set-key "k"  'kill-buffer)
 (evil-leader/set-key ";"  'evilnc-comment-or-uncomment-lines)
+
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
 ;; evil leader
@@ -105,6 +89,9 @@
 ;; the silver searcher ag
 (require 'ag)
 (setq ag-highlight-search t)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;; cscope
 (require 'xcscope)
@@ -136,5 +123,4 @@
 (add-hook 'c-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'rust-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
-
 
