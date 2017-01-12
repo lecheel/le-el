@@ -87,6 +87,4 @@
    (setq killed-rectangle (extract-rectangle start end))
    (kill-ring-save start end))
 
-(global-set-key (kbd "C-x r c") 'my-copy-rectangle)
-
 (provide 'lestyle)
