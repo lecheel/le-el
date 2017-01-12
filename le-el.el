@@ -3,10 +3,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/el"))
 (add-to-list 'auto-mode-alist '("\\TODO\\'" . org-mode))
 (add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
-<<<<<<< HEAD
 (add-to-list 'auto-mode-alist '("\\.spacemacs\\'" . lisp-mode))
-=======
->>>>>>> cf173a4904c722cd45aa33ffc5bd6817f627e19d
 
 ;; Remove scrollbars, menu bars, and toolbars
 ; when is a special form of "if", with no else clause, it reads:
@@ -60,15 +57,10 @@
 (global-set-key "\M-t" 'query-replace)
 (global-set-key "\M-y" 'er/expand-region)
 
-<<<<<<< HEAD
 ;;(global-set-key [(f6)] 'other-window)
 (global-set-key [(f6)] 'ace-window)
 ;;(global-set-key [(f8)] 'taglist)
 (global-set-key [(f8)] 'imenu-list)
-=======
-(global-set-key [(f6)] 'other-window)
-(global-set-key [(f8)] 'taglist)
->>>>>>> cf173a4904c722cd45aa33ffc5bd6817f627e19d
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f9)] 'git-gutter-mode)
 (global-set-key [(f3)] 'save-buffer)
@@ -76,14 +68,10 @@
 
 ;;; toggle
 (evil-leader/set-key "tl"  'linum-mode)
-<<<<<<< HEAD
 (evil-leader/set-key "tr"  'rainbow-delimiters-mode)
 (evil-leader/set-key "tg"  'git-gutter-mode)
 (evil-leader/set-key "x"   'delete-window)
 (evil-leader/set-key "1"   'delete-other-windows)
-
-=======
->>>>>>> cf173a4904c722cd45aa33ffc5bd6817f627e19d
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -125,14 +113,11 @@
 (evil-leader/set-key "d"  'git-gutter:popup-hunk)
 (evil-leader/set-key "r"  'git-gutter:revert-hunk)
 
-<<<<<<< HEAD
 (global-set-key [(kp-add)] 'git-gutter:next-hunk)
 (global-set-key [(kp-subtract)] 'git-gutter:previous-hunk)
 (global-set-key [(kp-multiply)] 'git-gutter:popup-hunk)
 
 
-=======
->>>>>>> cf173a4904c722cd45aa33ffc5bd6817f627e19d
 ;; Jump to next/previous hunk
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
@@ -142,11 +127,8 @@
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 (global-set-key [\M-down] 'next-error)
 (global-set-key [\M-up] 'previous-error)
-<<<<<<< HEAD
 (evil-leader/set-key "]"  'next-error)
 (evil-leader/set-key "["  'previous-error)
-=======
->>>>>>> cf173a4904c722cd45aa33ffc5bd6817f627e19d
 
 
 ;;;
