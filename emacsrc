@@ -77,6 +77,8 @@
  '(highlight ((t (:background "yellow"))))
  '(lazy-highlight ((t (:background "green" :foreground "brightyellow"))))
  '(minibuffer-prompt ((t (:foreground "green"))))
+ '(magit-branch-local ((t (:foreground "yellow"))))
+ '(magit-branch-current ((t (:foreground "yellow"))))
  '(region ((t (:background "green"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
