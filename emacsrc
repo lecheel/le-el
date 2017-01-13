@@ -13,7 +13,7 @@
 (evil-leader/set-leader ",")
 (evil-leader/set-key
 	"gs" 'magit-status
-	"gl" 'magit-log
+	"gl" 'magit-reflog
 	"gd" 'magit-diff
 )
 
