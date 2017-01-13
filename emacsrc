@@ -7,6 +7,8 @@
 (require 'evil)
 (evil-mode 1)
 (which-key-mode 1)
+(require 'git-gutter)
+(global-git-gutter-mode t)
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -41,6 +43,32 @@
 (global-set-key [(f3)] 'save-buffer)
 (global-set-key [(f6)] 'ace-window)
 (global-set-key [(f7)] 'evil-jump-item)
+(evil-leader/set-key "x" 'delete-window)
+(evil-leader/set-key "1" 'delete-other-windows)
+(evil-leader/set-key "k" 'kill-buffer)
+
+;;
+;; Toggle ...
+;;
+(evil-leader/set-key
+	"tl" 'linum-relative-mode
+	"tg" 'git-gutter-mode
+)
+
+;;
+;; GitGutter ...
+;;
+(evil-leader/set-key
+  "vp" 'git-gutter:previous-hunk
+  "vn" 'git-gutter:next-hunk
+  "vr" 'git-gutter:revert-hunk
+  "vd" 'git-gutter:popup-hunk
+)
+
+(global-set-key (kbd "<kp-add>") 'git-gutter:next-hunk)
+(global-set-key (kbd "<kp-subtract>") 'git-gutter:previous-hunk)
+(global-set-key (kbd "<kp-star>") 'git-gutter:popup-hunk)
+
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -65,6 +93,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(backup-inhibited t t)
+ '(git-gutter:modified-sign "  ") ;; two space
+ '(git-gutter:added-sign "+ ")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "- ")
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
