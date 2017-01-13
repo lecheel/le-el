@@ -34,6 +34,20 @@
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+
+(setq visible-bell t)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;;; override key bindind is here
+;;;
+(define-key evil-normal-state-map "\C-y" 'yank)
+(define-key evil-insert-state-map "\C-y" 'yank)
+(define-key evil-visual-state-map "\C-y" 'yank)
+
+(define-key evil-normal-state-map "\C-w" 'evil-delete)
+(define-key evil-insert-state-map "\C-w" 'evil-delete)
+(define-key evil-visual-state-map "\C-w" 'evil-delete)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
