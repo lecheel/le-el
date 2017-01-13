@@ -2,6 +2,8 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+(add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
+
 (require 'evil)
 (evil-mode 1)
 
