@@ -6,6 +6,7 @@
 
 (require 'evil)
 (evil-mode 1)
+(which-key-mode 1)
 
 (require 'evil-leader)
 (global-evil-leader-mode)
