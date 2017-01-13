@@ -106,6 +106,8 @@
 (require 'phi-rectangle)
 (phi-rectangle-mode 1)
 
+(which-key-mode 1)
+
 (global-set-key (kbd "C-x <SPC>") 'phi-rectangle-set-mark-command)
 (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
 

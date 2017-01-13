@@ -58,6 +58,7 @@ re-downloaded in order to locate PACKAGE."
         yasnippet
         phi-rectangle
         bracketed-paste
+        which-key
 	rainbow-delimiters
         ))
 
