@@ -107,7 +107,7 @@
 (setq git-gutter:added-sign "+")
 (set-face-foreground 'git-gutter:separator "yellow")
 
-(evil-leader/set-key "y"  'xah-extend-selection)
+(evil-leader/set-key "y"  'er/expand-region)
 (evil-leader/set-key "n"  'git-gutter:next-hunk)
 (evil-leader/set-key "p"  'git-gutter:previous-hunk)
 (evil-leader/set-key "d"  'git-gutter:popup-hunk)

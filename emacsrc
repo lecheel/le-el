@@ -78,6 +78,7 @@
  '(magit-diff-removed ((t (:foreground "#aa2222"))))
  '(magit-diff-removed-highlight ((t (:foreground "#aa2222"))))
  '(magit-dimmed ((t (:foreground "color-250"))))
+ '(magit-section-highlight ((t (:background "green"))))
  '(org-agenda-structure ((t (:foreground "blue"))))
  '(org-clock-overlay ((t (:background "blue"))))
  '(org-table ((t (:foreground "green"))))
@@ -95,7 +96,6 @@
 
 (set-face-foreground 'minibuffer-prompt "green")
 
-;;;
 ;;; override key bindind is here
 ;;;
 (define-key evil-normal-state-map "\C-y" 'yank)
