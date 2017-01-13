@@ -11,11 +11,25 @@
 (global-evil-leader-mode)
 
 (evil-leader/set-leader ",")
+
+;;
+;; magit ...
+;;
 (evil-leader/set-key
 	"gs" 'magit-status
 	"gl" 'magit-reflog
 	"gd" 'magit-diff
 )
+
+;;
+;; Personal binding leStyle
+;;
+(global-set-key (kbd "M-d") 'kill-whole-line)
+(global-set-key (kbd "M-b") 'ace-jump-buffer)
+(global-set-key (kbd "M-y") 'er/expand-region)
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+(global-set-key [(f3)] 'save-buffer)
+(global-set-key [(f6)] 'ace-window)
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
