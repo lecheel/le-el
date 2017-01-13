@@ -8,6 +8,9 @@
 (evil-mode 1)
 (which-key-mode 1)
 
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 (require 'evil-leader)
 (global-evil-leader-mode)
 
@@ -20,6 +23,7 @@
 	"gs" 'magit-status
 	"gl" 'magit-reflog
 	"gd" 'magit-diff
+	"ga" 'magit-log-all
 )
 
 ;;
@@ -31,6 +35,7 @@
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key [(f3)] 'save-buffer)
 (global-set-key [(f6)] 'ace-window)
+(global-set-key [(f7)] 'evil-jump-item)
 
 ;;; super M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -55,6 +60,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(backup-inhibited t t)
+ 
  '(make-backup-files nil)
  '(custom-enabled-themes (quote (wombat))))
 (custom-set-faces
@@ -71,4 +77,13 @@
  '(highlight ((t (:background "yellow"))))
  '(lazy-highlight ((t (:background "green" :foreground "brightyellow"))))
  '(minibuffer-prompt ((t (:foreground "green"))))
- '(region ((t (:background "green")))))
+ '(region ((t (:background "green"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "chartreuse"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "yellow"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1"))))
+ )
