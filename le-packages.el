@@ -1,6 +1,6 @@
 (require 'package)
 (setq package-archives '(
-			("melpa" . "http://melpa.milkbox.net/packages/")
+			("melpa" . "http://melpa.org/packages/")
 			))
 
 (defun require-package (package &optional min-version no-refresh)
@@ -44,6 +44,8 @@
 	wgrep
 	wgrep-ack
 	wgrep-ag
+	which-key
+	rainbow-delimiters
 	saveplace
 	xcscope
 	phi-rectangle
