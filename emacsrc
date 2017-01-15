@@ -18,10 +18,23 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 
+(load "~/.emacs.d/el/vgrep-mode.el")
+(require 'vgrep-mode)
+(add-hook 'grp-mode-hook '(lambda ()
+        (local-set-key (kbd "RET") 'vEnter)))
+(global-set-key [(f11)]'vlist)
+(global-set-key (kbd "M-\'") 'vgrep)
+
+
 (require 'powerline)
 (require 'airline-themes)
 ;;(powerline-default-theme)
 (load-theme 'airline-light t)
+
+
+(require 'saveplace)
+(setq-default save-place t)
+
 
 (evil-leader/set-leader ",")
 

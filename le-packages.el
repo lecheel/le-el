@@ -36,6 +36,7 @@
 	google-translate
 	helm
 	iedit
+	imenu-list
 	linum-relative
 	magit
 	markdown-mode+
