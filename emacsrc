@@ -1,6 +1,7 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+(load "~/.emacs.d/le-packages.el")
+;;(require 'package)
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;;(package-initialize)
 
 (add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
 
