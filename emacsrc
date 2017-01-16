@@ -5,13 +5,16 @@
 
 (add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
 
-
+;;
+;; Init vars
+;;
 (require 'evil)
 (evil-mode 1)
 (which-key-mode 1)
 (require 'git-gutter)
 (global-git-gutter-mode t)
 (menu-bar-mode -1)
+(setq linum-relative-current-symbol "")
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -48,6 +51,7 @@
 	"gl" 'magit-reflog
 	"gd" 'magit-diff
 	"ga" 'magit-log-all
+	"gc" 'magit-show-commit
 )
 
 ;;
