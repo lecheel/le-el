@@ -52,6 +52,9 @@
 	"gd" 'magit-diff
 	"ga" 'magit-log-all
 	"gc" 'magit-show-commit
+	"gy" 'magit-show-refs
+	"gr" 'git-gutter:revert-hunk
+	"gg" 'vc-git-grep
 )
 
 ;;
@@ -72,6 +75,9 @@
 (evil-leader/set-key "x" 'delete-window)
 (evil-leader/set-key "1" 'delete-other-windows)
 (evil-leader/set-key "k" 'kill-buffer)
+(evil-leader/set-key "s" 'ace-jump-char-mode)
+(evil-leader/set-key "b" 'ace-jump-buffer)
+(evil-leader/set-key "d" 'kill-whole-line)
 
 ;;
 ;; Toggle ...
