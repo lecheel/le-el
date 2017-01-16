@@ -67,6 +67,7 @@
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M--") 'le-next-buffer)
 (global-set-key (kbd "M-=") 'le-previous-buffer)
+(global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
 (global-set-key [(f3)] 'save-buffer)
 (global-set-key [(f6)] 'ace-window)
 (global-set-key [(f7)] 'evil-jump-item)
@@ -78,7 +79,7 @@
 (evil-leader/set-key "k" 'kill-buffer)
 (evil-leader/set-key "s" 'ace-jump-char-mode)
 (evil-leader/set-key "b" 'ace-jump-buffer)
-(evil-leader/set-key "d" 'kill-whole-line)
+(evil-leader/set-key ";" 'evilnc-comment-or-uncomment-lines)
 
 ;;
 ;; Toggle ...

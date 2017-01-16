@@ -119,10 +119,8 @@
 )
 
 (defconst grp-font-lock-keywords-1
-  (list '("File:.*"
-		  . font-lock-comment-face)
-		'("^[0-9]*"
-		  . font-lock-function-name-face))
+  (list '("File:.*" . font-lock-comment-face)
+	'("^[0-9]*" . font-lock-function-name-face))
   "Minimal highlighting expressions for grp mode.")
 
 (defvar grp-font-lock-keywords grp-font-lock-keywords-1
