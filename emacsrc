@@ -72,6 +72,7 @@
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f8)] 'imenu-list)
 (global-set-key [(f10)] 'leMenu)
+(define-key evil-normal-state-map (kbd "K") 'find-grep-word)
 (evil-leader/set-key "x" 'delete-window)
 (evil-leader/set-key "1" 'delete-other-windows)
 (evil-leader/set-key "k" 'kill-buffer)
@@ -178,6 +179,36 @@
 	    (< i 50))
       (setq i (1+ i)) (previous-buffer) )
     ))
+
+;;
+;; grep setting
+;;
+
+(autoload 'grep-apply-setting "grep"
+  "Set SYMBOL to VALUE, and update `grep-host-defaults-alist'.
+SYMBOL should be one of `grep-command', `grep-template',
+`grep-use-null-device', `grep-find-command',
+`grep-find-template', `grep-find-use-xargs', or
+`grep-highlight-matches'.")
+
+(defun find-grep-word (dir)
+  "Run `grep' to find current word in directory DIR."
+  (interactive "P")
+  (grep-compute-defaults)
+  (set-grep-command (concat "find . ! -name \"*.o\" ! -name \"archive-contents\" ! -name \"*.pyc\" ! -name \"*.elc\" ! -name \"*~\" ! -name \".git\" -type f -exec grep -nH -e "))
+  (let* ((word (current-word)) command-args)
+    (if (not word)
+        (message "No word under cursor.")
+      (setq command-args
+            (if grep-find-command
+                (concat grep-find-command word " {} +")
+              (concat grep-command word " . /*")))
+        (grep command-args))))
+
+(defun set-grep-command (command)
+  "Set `grep-command'."
+    (grep-apply-setting 'grep-find-command command )
+    (setq grep-find-command command))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
