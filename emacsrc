@@ -58,6 +58,8 @@
 (global-set-key (kbd "M-e") 'find-file)
 (global-set-key (kbd "M-y") 'er/expand-region)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "M--") 'le-next-buffer)
+(global-set-key (kbd "M-=") 'le-previous-buffer)
 (global-set-key [(f3)] 'save-buffer)
 (global-set-key [(f6)] 'ace-window)
 (global-set-key [(f7)] 'evil-jump-item)
@@ -127,6 +129,10 @@
   "\C-x a" "Abbrev"
   )
 
+;;
+;; leStyle function
+;;
+
 (add-hook
  'pre-command-hook
  (lambda ()
@@ -141,8 +147,27 @@
   (setq menu-bar-mode 42)
   )
 
+(defun le-next-buffer()
+  (interactive)
+  (next-buffer)
+  (let ((i 0))
+    (while (and 
+	    (or (string-match "^*" (buffer-name)) 
+		(string-match "TAGS" (buffer-name)))
+	    (< i 50))
+      (setq i (1+ i)) (next-buffer) )
+    ))
 
-
+(defun le-previous-buffer()
+  (interactive)
+  (previous-buffer)
+  (let ((i 0))
+    (while (and 
+	    (or (string-match "^*" (buffer-name)) 
+		(string-match "TAGS" (buffer-name)))          
+	    (< i 50))
+      (setq i (1+ i)) (previous-buffer) )
+    ))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
