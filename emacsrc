@@ -117,6 +117,16 @@
 (define-key evil-insert-state-map "\C-w" 'evil-delete)
 (define-key evil-visual-state-map "\C-w" 'evil-delete)
 
+;; We define prefix commands only for the sake of which-key
+(which-key-declare-prefixes
+  ",f" "files"
+  ",g" "git"
+  ",v" "Gutter"
+  ",t" "Toggle"
+  "\C-x r" "Reg/Rect"
+  "\C-x a" "Abbrev"
+  )
+
 (add-hook
  'pre-command-hook
  (lambda ()
