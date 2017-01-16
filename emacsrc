@@ -1,8 +1,10 @@
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
+(load "~/.emacs.d/le-packages.el")
+;;(require 'package)
+;;(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;;(package-initialize)
 
 (add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
+
 
 (require 'evil)
 (evil-mode 1)
@@ -17,10 +19,24 @@
 (require 'evil-leader)
 (global-evil-leader-mode)
 
+(load "~/.emacs.d/el/vgrep-mode.el")
+(require 'vgrep-mode)
+(add-hook 'grp-mode-hook '(lambda ()
+        (local-set-key (kbd "RET") 'vEnter)))
+(global-set-key [(f11)]'vlist)
+(global-set-key (kbd "M-\'") 'vgrep)
+
+
 (require 'powerline)
 (require 'airline-themes)
 ;;(powerline-default-theme)
 (load-theme 'airline-light t)
+
+
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file "~/.emacs.d/saveplace")
+
 
 (evil-leader/set-leader ",")
 
@@ -39,6 +55,7 @@
 ;;
 (global-set-key (kbd "M-d") 'kill-whole-line)
 (global-set-key (kbd "M-b") 'ace-jump-buffer)
+(global-set-key (kbd "M-e") 'find-file)
 (global-set-key (kbd "M-y") 'er/expand-region)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key [(f3)] 'save-buffer)
@@ -54,9 +71,19 @@
 ;; Toggle ...
 ;;
 (evil-leader/set-key
-	"tl" 'linum-relative-mode
-	"tg" 'git-gutter-mode
-)
+  "tl" 'linum-relative-mode
+  "tg" 'git-gutter-mode
+  )
+
+;;
+;; File ...
+;;
+(evil-leader/set-key
+  "fb" 'ibuffer
+  "ff" 'find-name-dired
+  "fe" 'find-file
+  )
+
 
 ;;
 ;; GitGutter ...
@@ -113,7 +140,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(backup-inhibited t t)
- '(git-gutter:modified-sign "  ") ;; two space
+ '(git-gutter:modified-sign "* ") ;; two space
  '(git-gutter:added-sign "+ ")    ;; multiple character is OK
  '(git-gutter:deleted-sign "- ")
  '(custom-enabled-themes (quote (wombat)))
