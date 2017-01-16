@@ -9,6 +9,7 @@
 (which-key-mode 1)
 (require 'git-gutter)
 (global-git-gutter-mode t)
+(menu-bar-mode -1)
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
