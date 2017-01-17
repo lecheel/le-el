@@ -88,15 +88,26 @@
 (evil-leader/set-key "b" 'ace-jump-buffer)
 (evil-leader/set-key "d" 'kill-whole-line)
 (evil-leader/set-key "k" 'kill-buffer)
-(evil-leader/set-key "s" 'ace-jump-char-mode)
 (evil-leader/set-key "x" 'delete-window)
+(evil-leader/set-key "<SPC>" 'ace-jump-char-mode)
 
+;;
+;; Search ...
+;;
+(evil-leader/set-key
+  "sp" 'pt-regexp
+  "sa" 'ag
+  "sg" 'grep-find
+  "sk" 'find-grep-word
+  )
+ 
 ;;
 ;; Toggle ...
 ;;
 (evil-leader/set-key
   "tl" 'linum-relative-mode
   "tg" 'git-gutter-mode
+  "td" 'rainbow-delimiters-mode
   )
 
 ;;
@@ -146,6 +157,7 @@
   ",f" "files"
   ",g" "git"
   ",v" "Gutter"
+  ",s" "Search"
   ",t" "Toggle"
   "\C-x r" "Reg/Rect"
   "\C-x a" "Abbrev"
