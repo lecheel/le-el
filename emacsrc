@@ -16,6 +16,10 @@
 (menu-bar-mode -1)
 (setq linum-relative-current-symbol "")
 
+;;; If you want the underscore to be recognised as word character, you can modify its entry in the syntax-table:
+(modify-syntax-entry ?_ "w")
+(add-hook 'c-mode-common-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
@@ -84,6 +88,7 @@
 (define-key evil-normal-state-map (kbd "K") 'find-grep-word)
 
 (evil-leader/set-key ";" 'evilnc-comment-or-uncomment-lines)
+(evil-leader/set-key "=" 'iedit-mode)
 (evil-leader/set-key "1" 'delete-other-windows)
 (evil-leader/set-key "b" 'ace-jump-buffer)
 (evil-leader/set-key "d" 'kill-whole-line)
@@ -156,7 +161,7 @@
 (which-key-declare-prefixes
   ",f" "files"
   ",g" "git"
-  ",v" "Gutter"
+  ",v" "gitGutter"
   ",s" "Search"
   ",t" "Toggle"
   "\C-x r" "Reg/Rect"
