@@ -52,6 +52,7 @@
 	phi-rectangle
 	bracketed-paste
 	elpy
+	auto-complete
 	))
 
 ; fetch the list of packages available
