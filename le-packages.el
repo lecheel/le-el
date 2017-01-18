@@ -51,6 +51,7 @@
 	xcscope
 	phi-rectangle
 	bracketed-paste
+	elpy
 	))
 
 ; fetch the list of packages available

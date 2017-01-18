@@ -14,7 +14,14 @@
 (require 'git-gutter)
 (global-git-gutter-mode t)
 (menu-bar-mode -1)
+(ac-config-default)
+(global-auto-complete-mode t)
 (setq linum-relative-current-symbol "")
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
+
+(elpy-enable)
 
 ;;; If you want the underscore to be recognised as word character, you can modify its entry in the syntax-table:
 (modify-syntax-entry ?_ "w")
@@ -113,6 +120,8 @@
   "tl" 'linum-relative-mode
   "tg" 'git-gutter-mode
   "td" 'rainbow-delimiters-mode
+  "ty" 'yas-global-mode
+  "ta" 'global-auto-complete-mode
   )
 
 ;;
