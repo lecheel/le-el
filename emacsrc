@@ -4,6 +4,7 @@
 ;;(package-initialize)
 
 (add-to-list 'auto-mode-alist '("\\emacsrc\\'" . lisp-mode))
+(add-to-list 'auto-mode-alist '("\\vimrc\\'" . vimrc-mode))
 
 ;;
 ;; Init vars
