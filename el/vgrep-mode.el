@@ -83,6 +83,7 @@
 
 (defun vEnter()
   (interactive)
+  (setq evil-default-state 'normal)
   (progn (beginning-of-line)
 		 (setq myLine (thing-at-point 'word))
 		 (search-backward "File:")
@@ -93,6 +94,7 @@
 		 (switch-to-buffer (current-buffer))
 		 (goto-line (string-to-number myLine))
 		 )
+  (message "")
   )
   
 (defun grp-mode-quit()
@@ -106,6 +108,7 @@
     (define-key grp-mode-map "\C-j" 'vEnter)
     (define-key grp-mode-map (kbd "q") 'grp-mode-quit)
     (define-key grp-mode-map (kbd "e") 'vEnter)
+    (define-key grp-mode-map (kbd "RET") 'vEnter)
     grp-mode-map)
 
   "Keymap for vGrep major mode")
@@ -145,9 +148,11 @@
   (use-local-map grp-mode-map)
   (set-syntax-table grp-mode-syntax-table)
   ;; Set up font-lock
+
   (set (make-local-variable 'font-lock-defaults) '(grp-font-lock-keywords))
   ;; Register our indentation function
   (set (make-local-variable 'newline) 'vEnter)
+  (setq evil-default-state 'emacs)
   (setq major-mode 'grp-mode)
   (setq mode-name "vGrep")
   (run-hooks 'grp-mode-hook))

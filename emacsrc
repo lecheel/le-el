@@ -36,8 +36,6 @@
 
 (load "~/.emacs.d/el/vgrep-mode.el")
 (require 'vgrep-mode)
-(add-hook 'grp-mode-hook '(lambda ()
-        (local-set-key (kbd "RET") 'vEnter)))
 (global-set-key [(f11)]'vlist)
 (global-set-key (kbd "M-\'") 'vgrep)
 
@@ -70,6 +68,8 @@
 	"gr" 'git-gutter:revert-hunk
 	"gs" 'magit-status
 	"gy" 'magit-show-refs
+	"gp" 'git-gutter:previous-hunk
+	"gn" 'git-gutter:next-hunk
 )
 
 ;;
@@ -92,6 +92,8 @@
 (global-set-key [(f7)] 'evil-jump-item)
 (global-set-key [(f8)] 'imenu-list)
 (global-set-key [(f10)] 'leMenu)
+(global-set-key [(f12)] 'next-error)
+(global-set-key [(shift f12)] 'previous-error)
 
 (define-key evil-normal-state-map (kbd "K") 'find-grep-word)
 
