@@ -80,7 +80,7 @@
 (global-set-key (kbd "M--") 'le-next-buffer)
 (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
 (global-set-key (kbd "M-=") 'le-previous-buffer)
-(global-set-key (kbd "M-b") 'ace-jump-buffer)
+(global-set-key (kbd "M-b") 'ibuffer)
 (global-set-key (kbd "M-c") 'phi-rectangle-set-mark-command)
 (global-set-key (kbd "M-d") 'kill-whole-line)
 (global-set-key (kbd "M-e") 'find-file)
@@ -132,6 +132,7 @@
 ;;
 (evil-leader/set-key
   "fb" 'ibuffer
+  "fa" 'ace-jump-buffer
   "ff" 'find-name-dired
   "fe" 'find-file
   )
