@@ -24,6 +24,7 @@
 	ack-menu
 	airline-themes
 	ag
+	pt
 	etags-select
 	evil
 	evil-leader
