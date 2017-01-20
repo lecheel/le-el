@@ -54,6 +54,7 @@
 	bracketed-paste
 	elpy
 	auto-complete
+	vimrc-mode
 	))
 
 ; fetch the list of packages available
