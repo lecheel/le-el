@@ -23,6 +23,11 @@
 	ace-popup-menu
 	ack-menu
 	airline-themes
+	async
+	popup
+	dash
+	s
+	highlight-indentation
 	ag
 	bind-key
 	etags-select
@@ -33,7 +38,7 @@
 	evil-nerd-commenter
 	evil-search-highlight-persist
 	evil-visualstar
-    evil-org
+        evil-org
 	expand-region
 	git-gutter
 	google-translate
