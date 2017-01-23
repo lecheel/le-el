@@ -19,6 +19,8 @@
 (global-auto-complete-mode t)
 (setq linum-relative-current-symbol "")
 
+(setq evil-want-fine-undo 'fine)
+
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/backup/" t)))
 
@@ -251,6 +253,19 @@ SYMBOL should be one of `grep-command', `grep-template',
     (grep-apply-setting 'grep-find-command command )
     (setq grep-find-command command))
 
+
+;;(eval-after-load "evil-maps"
+;;  (dolist (map '(evil-motion-state-map
+;;		 evil-insert-state-map
+;;		 evil-emacs-state-map))
+;;        (define-key (eval map) "<insertchar>" nil)))
+
+;; evil key un-binding
+(define-key evil-normal-state-map (kbd "<insertchar>") nil)
+;; brief style paste
+(global-set-key (kbd "<insertchar>") 'yank)
+(global-set-key (kbd "M-i") 'overwrite-mode)
+						
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
