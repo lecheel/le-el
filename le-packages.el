@@ -23,7 +23,10 @@
 	ace-popup-menu
 	ack-menu
 	airline-themes
-	ag
+	async
+	dash
+	popup
+	s
 	pt
 	etags-select
 	evil
@@ -39,6 +42,7 @@
 	iedit
 	imenu-list
 	linum-relative
+	highlight-indentation
 	magit
 	markdown-mode+
 	powerline
