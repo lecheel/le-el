@@ -27,6 +27,7 @@
 	dash
 	popup
 	s
+	ag
 	pt
 	etags-select
 	evil
