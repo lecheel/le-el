@@ -144,10 +144,12 @@
 ;; GitGutter ...
 ;;
 (evil-leader/set-key
-  "vp" 'git-gutter:previous-hunk
-  "vn" 'git-gutter:next-hunk
-  "vr" 'git-gutter:revert-hunk
-  "vd" 'git-gutter:popup-hunk
+  "hp" 'git-gutter:previous-hunk
+  "hn" 'git-gutter:next-hunk
+  "hr" 'git-gutter:revert-hunk
+  "hu" 'git-gutter:revert-hunk
+  "hd" 'git-gutter:popup-hunk
+  "hv" 'git-gutter:popup-hunk
 )
 
 (global-set-key (kbd "<kp-add>") 'git-gutter:next-hunk)
@@ -176,7 +178,7 @@
 (which-key-declare-prefixes
   ",f" "files"
   ",g" "git"
-  ",v" "gitGutter"
+  ",h" "gitGutter"
   ",s" "Search"
   ",t" "Toggle"
   "\C-x r" "Reg/Rect"
