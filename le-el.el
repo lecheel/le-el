@@ -17,6 +17,7 @@
 (setq make-backup-files nil)
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
+(save-place-mode 1)
 
 (require 'google-translate)
 (require 'google-translate-default-ui)
@@ -48,7 +49,7 @@
 
 ;;; basic brief binding
 (global-set-key "\C-k" 'paredit-kill)
-(global-set-key "\M--" 'le-previous-buffer) 
+(global-set-key "\M--" 'le-previous-buffer)
 (global-set-key "\M-=" 'le-next-buffer)
 (global-set-key "\M-b" 'ibuffer)
 (global-set-key "\M-c" 'phi-rectangle-set-mark-command)
@@ -200,7 +201,7 @@
 ;;;
 ;;; more tips from people switch from vim with evil
 ;;;
-;;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/   
+;;; http://juanjoalvarez.net/es/detail/2014/sep/19/vim-emacsevil-chaotic-migration-guide/
 ;;; http://www.elmindreda.org/emacs.html
 ;;;
 ;;;

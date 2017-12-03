@@ -39,6 +39,9 @@
  '(make-backup-files nil)
  '(menu-bar-mode nil)
  '(org-agenda-files (quote ("~/.emacs.d/tips.org")))
+ '(package-selected-packages
+   (quote
+    (rainbow-delimiters which-key bracketed-paste phi-rectangle yasnippet xcscope wgrep-ag wgrep-ack wgrep powerline-evil multiple-cursors markdown-mode+ markdown-mode magit linum-relative iedit helm go-mode google-translate git-gutter expand-region evil-org evil-visualstar evil-search-highlight-persist evil-nerd-commenter evil-paredit evil-matchit evil-leader evil etags-select bind-key ag airline-themes ack-menu ace-popup-menu ace-window ace-jump-buffer ace-jump-mode)))
  '(puppet-indent-level tab-width)
  '(recentf-max-saved-items 75)
  '(require-final-newline t)
